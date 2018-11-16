@@ -27,6 +27,7 @@
             <li><a href="#">Log Out</a></li>
             </ul>
         </li>
+        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
         </ul>
     </div>
     </nav>
