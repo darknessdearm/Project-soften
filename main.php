@@ -8,22 +8,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Welcome</title>
+    <style>
+        
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <ul class="nav navbar-nav">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Recipe</a></li>
-        <li><a href="#">Product</a></li>
-        <li><a href="#">Promotion</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#recipe">Recipe</a></li>
+        <li><a href="#product">Product</a></li>
+        <li><a href="#promotion">Promotion</a></li>
+        <li><a href="#contact">Contact</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Username<span class="caret"></span></a>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Username <span class="caret"></span></a>
             <ul class="dropdown-menu">
             <li><a href="#">Bookmark</a></li>
-            <li><a href="#">Page 1-2</a></li>
+            <li><a href="#">My Purchases</a></li>
+            <li><a href="#">Setting</a></li>
             <li><a href="#">Log Out</a></li>
             </ul>
         </li>
