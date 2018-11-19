@@ -32,6 +32,15 @@
         .container {
             padding: 2px 16px;
         }
+        #cart{
+            font-size:24px; color: #7f7f7f; float: right;
+        }
+        #cart:hover{
+            color:#444444;
+        }
+        #cart:active{
+            color:#444444;
+        }
     </style>
 </head>
 <body>
@@ -52,7 +61,7 @@
             <li><a class="dropdown-item" href="#logout">Log Out</a></li>
             </ul>
         </li>
-        <li class = "nav-item my-2 my-sm-0t"><a href="#cart" class='fas fa-shopping-cart' style='font-size:24px; color: #444444; float: right'></a></li>
+        <li class = "nav-item my-2 my-sm-0t"><a href="#cart" id = "cart" class='fas fa-shopping-cart'></a></li>
         </ul>
     </nav>
         <div class="container-fluid" style="margin-top:60px">
