@@ -16,10 +16,26 @@
         .nav-link{
            color: white; 
         }
+        .card {
+            /* Add shadows to create the "card" effect */
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+
+        /* On mouse-over, add a deeper shadow */
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
+        /* Add some padding inside the card container */
+        .container {
+            padding: 2px 16px;
+        }
+
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-light fixed-top justify-content-between">
+    <nav class="navbar navbar-expand-sm bg-white navbar-light fixed-top justify-content-between">
         <ul class="navbar-nav">
         <li class = "nav-item"><a class = "nav-link" href="#home">Home</a></li>
         <li class = "nav-item"><a class = "nav-link" href="#recipe">Recipe</a></li>
@@ -88,7 +104,35 @@
             </div>
         </div>
         </div>
-        <div class="row">
+        <br>
+        <div class="row" style = "margin-left: 5%">
+        <div class="col" style = "float:right">
+            <div class="card" style="width:400px">
+                <img class="card-img-top" src="img1.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                </div>
+            </div>
+        </div>
+        <div class="col" style = "float:center">
+            <div class="card" style="width:400px">
+                <img class="card-img-top" src="img1.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                </div>
+            </div>
+        </div>
+        <div class="col" style = "float:center">
+            <div class="card" style="width:400px">
+                <img class="card-img-top" src="img1.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                </div>
+            </div>
+        </div>
         </div>
         </div>
 </body>
