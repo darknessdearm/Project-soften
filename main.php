@@ -19,7 +19,7 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-dark fixed-top justify-content-between" style = "background-color: #FF0D1D">
+    <nav class="navbar navbar-expand-sm navbar-light fixed-top justify-content-between">
         <ul class="navbar-nav">
         <li class = "nav-item"><a class = "nav-link" href="#home">Home</a></li>
         <li class = "nav-item"><a class = "nav-link" href="#recipe">Recipe</a></li>
@@ -36,7 +36,7 @@
             <li><a class="dropdown-item" href="#logout">Log Out</a></li>
             </ul>
         </li>
-        <li class = "nav-item my-2 my-sm-0t"><a href="#cart" class='fas fa-shopping-cart' style='font-size:24px; color: white; float: right'></a></li>
+        <li class = "nav-item my-2 my-sm-0t"><a href="#cart" class='fas fa-shopping-cart' style='font-size:24px; color: #444444; float: right'></a></li>
         </ul>
     </nav>
         <div class="container-fluid" style="margin-top:60px">
@@ -44,13 +44,22 @@
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
             <br>
-            <h1 style = "text-align: center; color: #FF0D1D">Product</h2>
+            <h1 style = "text-align: center; ">Product</h2>
             </div>
             <div class="col-sm-3"></div>
         </div>
-        </div>
-        <div class="container-fluid">
         <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            </div>
+            <div class="col-sm-1">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <br>
+        <div class="row" style = "margin-left: 5%">
         <div class="col" style = "float:right">
             <div class="card" style="width:400px">
                 <img class="card-img-top" src="img1.jpg" alt="Card image" style="width:100%">
