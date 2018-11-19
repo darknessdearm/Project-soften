@@ -46,7 +46,7 @@
 <body>
     <nav class="navbar navbar-expand-sm bg-white navbar-light fixed-top justify-content-between">
         <ul class="navbar-nav">
-        <li class = "nav-item"><a class = "nav-link" href="#home">Home</a></li>
+        <li class = "nav-item"><a class = "nav-link" href="#home">Gourmet Home Cooking</a></li>
         <li class = "nav-item"><a class = "nav-link" href="#recipe">Recipe</a></li>
         <li class = "nav-item"><a class = "nav-link" href="#product">Product</a></li>
         <li class = "nav-item"><a class = "nav-link" href="#promotion">Promotion</a></li>
@@ -76,10 +76,14 @@
         <div class="row">
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
+            <form class = "from-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            </form>
             </div>
             <div class="col-sm-1">
+            <form class = "from-inline">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
             </div>
             <div class="col-sm-2"></div>
         </div>
