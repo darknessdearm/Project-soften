@@ -19,14 +19,14 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark fixed-top" style = "background-color: #FF0D1D">
+        
         <ul class="navbar-nav">
         <li class = "nav-item"><a class = "nav-link" href="#home">Home</a></li>
         <li class = "nav-item"><a class = "nav-link" href="#recipe">Recipe</a></li>
         <li class = "nav-item"><a class = "nav-link" href="#product">Product</a></li>
         <li class = "nav-item"><a class = "nav-link" href="#promotion">Promotion</a></li>
         <li class = "nav-item"><a class = "nav-link" href="#contact">Contact</a></li>
-        
-        <li class="nav-item dropdown "><a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Username </a>
+        <li class="nav-item dropdown navbar-right "><a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Username </a>
             <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Bookmark</a></li>
             <li><a class="dropdown-item" href="#">My Purchases</a></li>
@@ -34,7 +34,7 @@
             <li><a class="dropdown-item" href="#">Log Out</a></li>
             </ul>
         </li>
-        <li class = "nav-item"><a href="#" class='fas fa-shopping-cart' style='font-size:24px; color: white; float: right'></a></li>
+        <!-- <li class = "nav-item navbar-toggler-right"><a href="#" class='fas fa-shopping-cart' style='font-size:24px; color: white; float: right'></a></li> -->
         </ul>
     </nav>
         <div class="container-fluid" style="margin-top:60px">
