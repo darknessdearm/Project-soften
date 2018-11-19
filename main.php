@@ -12,29 +12,31 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <title>Welcome</title>
     <style>
+        @import "sildeshow.css";
         .nav-link{
            color: white; 
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-dark fixed-top" style = "background-color: #FF0D1D">
-        
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top justify-content-between" style = "background-color: #FF0D1D">
         <ul class="navbar-nav">
         <li class = "nav-item"><a class = "nav-link" href="#home">Home</a></li>
         <li class = "nav-item"><a class = "nav-link" href="#recipe">Recipe</a></li>
         <li class = "nav-item"><a class = "nav-link" href="#product">Product</a></li>
         <li class = "nav-item"><a class = "nav-link" href="#promotion">Promotion</a></li>
         <li class = "nav-item"><a class = "nav-link" href="#contact">Contact</a></li>
-        <li class="nav-item dropdown navbar-right "><a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Username </a>
+        </ul>
+        <ul class="navbar-nav">
+        <li class="nav-item dropdown mr-sm-2"><a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Username </a>
             <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Bookmark</a></li>
-            <li><a class="dropdown-item" href="#">My Purchases</a></li>
-            <li><a class="dropdown-item" href="#">Setting</a></li>
-            <li><a class="dropdown-item" href="#">Log Out</a></li>
+            <li><a class="dropdown-item" href="#bookmark">Bookmark</a></li>
+            <li><a class="dropdown-item" href="#history">My Purchases</a></li>
+            <li><a class="dropdown-item" href="#setting">Setting</a></li>
+            <li><a class="dropdown-item" href="#logout">Log Out</a></li>
             </ul>
         </li>
-        <!-- <li class = "nav-item navbar-toggler-right"><a href="#" class='fas fa-shopping-cart' style='font-size:24px; color: white; float: right'></a></li> -->
+        <li class = "nav-item my-2 my-sm-0t"><a href="#cart" class='fas fa-shopping-cart' style='font-size:24px; color: white; float: right'></a></li>
         </ul>
     </nav>
         <div class="container-fluid" style="margin-top:60px">
@@ -46,12 +48,39 @@
             </div>
             <div class="col-sm-3"></div>
         </div>
+        </div>
+        <div class="container-fluid">
         <div class="row">
-
+        <div class="col" style = "float:right">
+            <div class="card" style="width:400px">
+                <img class="card-img-top" src="img1.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                </div>
+            </div>
+        </div>
+        <div class="col" style = "float:center">
+            <div class="card" style="width:400px">
+                <img class="card-img-top" src="img1.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                </div>
+            </div>
+        </div>
+        <div class="col" style = "float:center">
+            <div class="card" style="width:400px">
+                <img class="card-img-top" src="img1.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                </div>
+            </div>
+        </div>
         </div>
         <div class="row">
         </div>
         </div>
-
 </body>
 </html>
