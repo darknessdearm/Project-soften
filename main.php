@@ -37,11 +37,12 @@
         <li class = "nav-item"><a href="#" class='fas fa-shopping-cart' style='font-size:24px; color: white; float: right'></a></li>
         </ul>
     </nav>
+        <div class="container-fluid" style="margin-top:60px">
         <div class="row">
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
             <br>
-            <h1 style = "text-align: center; color: tomato">Product</h2>
+            <h1 style = "text-align: center; color: #FF0D1D">Product</h2>
             </div>
             <div class="col-sm-3"></div>
         </div>
@@ -49,6 +50,7 @@
 
         </div>
         <div class="row">
+        </div>
         </div>
 
 </body>
