@@ -45,8 +45,8 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-sm bg-white navbar-light fixed-top justify-content-between">
-        <ul class="navbar-nav">
-        <li class = "nav-item"><a class = "nav-link" href="#home">Gourmet Home Cooking</a></li>
+        <a class = "navbar-brand" href="#home">Gourmet Home Cooking</a>
+        <ul class="navbar-nav mr-auto">
         <li class = "nav-item"><a class = "nav-link" href="#recipe">Recipe</a></li>
         <li class = "nav-item"><a class = "nav-link" href="#product">Product</a></li>
         <li class = "nav-item"><a class = "nav-link" href="#promotion">Promotion</a></li>
