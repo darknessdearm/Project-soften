@@ -106,7 +106,7 @@
         <br>
         <div class="row" style = "margin-left: 5%">
         <div class="col" style = "float:right">
-            <div class="card" style="width:400px">
+            <div class="card" style="width:400px" data-toggle="modal" data-target="#myModal">
                 <img class="card-img-top" src="img1.jpg" alt="Card image" style="width:100%">
                 <div class="card-body">
                 <h4 class="card-title">John Doe</h4>
@@ -165,6 +165,29 @@
         </div>
         </div>
         <br>
+        <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                Modal body..
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+            </div>
+        </div>
+        </div>
         <script>
         filterSelection("all")
         function filterSelection(c) {
