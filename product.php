@@ -44,7 +44,7 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm bg-white navbar-light fixed-top justify-content-between">
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top justify-content-between" style="background-color: #ed553B">
         <a class = "navbar-brand" href="#home">Gourmet Home Cooking</a>
         <ul class="navbar-nav mr-auto">
         <li class = "nav-item"><a class = "nav-link" href="#recipe">Recipe</a></li>
@@ -69,7 +69,7 @@
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
             <br>
-            <h1 style = "text-align: center; ">Product</h2>
+            <h1 style = "text-align: center; color:#ed553B">Product</h2>
             </div>
             <div class="col-sm-3"></div>
         </div>
@@ -82,7 +82,7 @@
             </div>
             <div class="col-sm-1">
             <form class = "from-inline">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style ="color:#ed553B">Search</button>
             </form>
             </div>
             <div class="col-sm-2"></div>
