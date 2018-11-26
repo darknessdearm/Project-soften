@@ -109,8 +109,17 @@
             <div class="card" style="width:400px">
                 <img class="card-img-top" src="img/Product/default.jpg" alt="Card image" style="width:100%">
                 <div class="card-body">
-                <h4 class="card-title">John Doe</h4>
-                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                    <h4 class="card-title">John Doe</h4>
+                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                </div>
+            </div>
+        </div>
+        <div class="col" style = "float:center">
+            <div class="card" style="width:400px">
+                <img class="card-img-top" src="img/Product/img2.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">John Doe</h4>
+                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
                 </div>
             </div>
         </div>
@@ -118,17 +127,8 @@
             <div class="card" style="width:400px">
                 <img class="card-img-top" src="img/Product/default.jpg" alt="Card image" style="width:100%">
                 <div class="card-body">
-                <h4 class="card-title">John Doe</h4>
-                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                </div>
-            </div>
-        </div>
-        <div class="col" style = "float:center">
-            <div class="card" style="width:400px">
-                <img class="card-img-top" src="img/Product/default.jpg" alt="Card image" style="width:100%">
-                <div class="card-body">
-                <h4 class="card-title">John Doe</h4>
-                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                    <h4 class="card-title">John Doe</h4>
+                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
                 </div>
             </div>
         </div>
@@ -166,6 +166,37 @@
         </div>
         <br>
         <script>
+        load();
+        
+        function load(){
+            var xmlhttp = new XMLHttpRequest();
+            var url = location.protocol + '//' + location.host+"/Projest-soften/view-product-link.php"
+
+            xmlhttp.onreadystatechange=function() {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    displayResponse(xmlhttp.responseText);
+                }
+            }
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
+        }
+
+        function displayResponse(response) {
+            window.arr = JSON.parse(response);
+            
+            var out = "<div class = 'row'><div class = 'col-sm-4' ><p>รหัสประจำตัวผู้สมัคร : "+ arr[0].RecruitID +"</p>"+
+                    "<p>ชื่อ : "+ arr[0].Prefix + arr[0].FirstName +" "+ arr[0].LastName +"</p>"+
+                    "<p>ชื่อโครงการ : "+ arr[0].RecruitPlanName +"</p>"+
+                    "<p>คณะ : "+ arr[0].Faculty +"</p>"+
+                    "<p>ภาควิชา : "+ arr[0].Department +"</p></div>"+
+                    "<div class = 'col-sm-4' ><p>เลขที่ใบเสร็จ : "+ arr[0].BillRecruitID +"</p>"+
+                    "<p>วันออกใบเสร็จ : "+ arr[0].DateRegister +"</p>"+
+                    "<p>ปีการศึกษา : 1/"+ arr[0].AcademicYear +"</p>"+
+                    "<p>จำนวนเงินที่ต้องจ่าย : 20,000 บาท</p></div></div>";
+
+            document.getElementById("detail").innerHTML = out;
+        }
+
         filterSelection("all")
         function filterSelection(c) {
         var x, i;
