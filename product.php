@@ -33,13 +33,27 @@
             padding: 2px 16px;
         }
         #cart{
-            font-size:24px; color: #7f7f7f; float: right;
+            font-size:24px; 
+            color:white;
+            opacity:0.4; 
+            float: right;
         }
         #cart:hover{
-            color:#444444;
+            color:white;
+            opacity:0.6; 
         }
         #cart:active{
-            color:#444444;
+            color:white;
+        }
+        #sch{
+            color:#ed553B;
+        }
+        #sch:hover{
+            color:#FF683F;
+        }
+        #sch:active{
+            color:white;
+            background-color:#ed553B;
         }
     </style>
 </head>
@@ -82,7 +96,7 @@
             </div>
             <div class="col-sm-1">
             <form class = "from-inline">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style ="color:#ed553B">Search</button>
+            <button class="btn btn-outline my-2 my-sm-0" type="submit" id = "sch">Search</button>
             </form>
             </div>
             <div class="col-sm-2"></div>
