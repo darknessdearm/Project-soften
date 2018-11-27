@@ -209,11 +209,7 @@
             var out = "<ul class='flex-container wrap'>";
             for( var i = 0 ; i < product.length ; i++ ) {
                 out += "<li class='flex-item'>"+
-<<<<<<< HEAD
-                    "<div class='card' style='width:300px' data-toggle='modal' data-target='#p" + product[i].ProductID +"'>"+
-=======
-                    "<div class='card' style='width:350px'>"+
->>>>>>> 94cf1b83dbe7d8059d584ec6837f1b15a4ed32a6
+                    "<div class='card' style='width:350px' data-toggle='modal' data-target='#p" + product[i].ProductID + "'>"+
                         "<img class='card-img-top' src='" + product[i].img + "' alt='Card image' style='width:100%'>"+
                         "<div class='card-body'>"+
                             "<h4 class='card-title'>" + product[i].ProductName + "</h4>"+
