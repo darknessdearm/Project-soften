@@ -168,7 +168,7 @@
         
         function load(){
             var xmlhttp = new XMLHttpRequest();
-            var url = location.protocol + '//' + location.host+"/Projest-soften/view-product-link.php"
+            var url = location.protocol + '//' + location.host+"/Project-soften/view-product-link.php"
 
             xmlhttp.onreadystatechange=function() {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -201,7 +201,7 @@
         filterSelection("all")
         function filterSelection(c) {
             var xmlhttp = new XMLHttpRequest();
-            var url = location.protocol + '//' + location.host+"/Projest-soften/view-product-link.php"
+            var url = location.protocol + '//' + location.host+"/Project-soften/view-product-link.php"
 
             xmlhttp.onreadystatechange=function() {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
