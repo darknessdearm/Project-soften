@@ -1,8 +1,7 @@
 <?php
-include "dblink.php";
-
-$result = $conn->query("SELECT * 
-                        FROM product");
+require_once "dblink.php";
+$sql = "SELECT * FROM product";
+$result = connection_database($sql);
 
 $outp = "[";
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
@@ -17,7 +16,6 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
 }
 $outp .="]";
 
-$conn->close();
 
 echo($outp);
 ?>
