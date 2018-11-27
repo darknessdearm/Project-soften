@@ -16,23 +16,7 @@
         @import "filter.css";
         .nav-link{
            color: white; 
-        } 
-        .card {
-            /* Add shadows to create the "card" effect */
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-            transition: 0.3s;
-        }
-
-        /* On mouse-over, add a deeper shadow */
-        .card:hover {
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-        }
-
-        /* Add some padding inside the card container */
-        .container {
-            padding: 2px 16px;
-        }
-        #cart{
+        } #cart{
             font-size:24px; 
             color:white;
             opacity:0.4; 
@@ -59,7 +43,12 @@
         .wrap { 
             -webkit-flex-wrap: wrap;
             flex-wrap: wrap;
-        } 
+        }
+        .card-text {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
         .flex-item {
             margin: 3%;
         }
@@ -92,12 +81,13 @@
             <div class="col-sm-6">
             <br>
             <h1 style = "text-align: center; color:#ed553B">Bookmark</h2>
-            <h4 style = "text-align: center; color:#ed553B">Product</h2>
+            <h1 style = "text-align: center; color:#ed553B">Product</h2>
             </div>
             <div class="col-sm-3"></div>
         </div>
         </div>
-        <div id="container" style="margin-left:15%">
+        
+        <div id="container" style="margin-left:10%">
             
         </div>
 
@@ -123,7 +113,7 @@
                 var out = "<ul class='flex-container wrap'>";
                 for( var i = 0 ; i < product.length ; i++ ) {
                     out += "<li class='flex-item'>"+
-                        "<div class='card' style='width:300px'>"+
+                        "<div class='card' style='width:350px'>"+
                             "<img class='card-img-top' src='" + product[i].img + "' alt='Card image' style='width:100%'>"+
                             "<div class='card-body'>"+
                                 "<h4 class='card-title'>" + product[i].ProductName + "</h4>"+
