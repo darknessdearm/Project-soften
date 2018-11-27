@@ -201,6 +201,19 @@
             out += "</ul>";
             document.getElementById("container").innerHTML = out;
         }
+
+        function bookMarkSelection(b) {
+            var xmlhttp = new XMLHttpRequest();
+            var url = location.protocol + '//' + location.host+"/Project-soften/add-bookmark-link.php"
+
+            xmlhttp.onreadystatechange=function() {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    displayResponse(xmlhttp.responseText);
+                }
+            }
+            xmlhttp.open("GET", url+"?bookmark="+b, true);
+            xmlhttp.send();
+        }
         
         filterSelection("all")
         function filterSelection(c) {
