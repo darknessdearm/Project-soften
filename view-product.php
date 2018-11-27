@@ -105,7 +105,7 @@
             <div class="row">
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6">
-                <br><h1 style = "text-align: center; color:#ed553B">Product</h2>
+                <br><h1 style = "text-align: center; color:#ed553B">Product</h1>
                 </div>
                 <div class="col-sm-3"></div>
             </div>
@@ -137,9 +137,10 @@
             </div>
             <div class="col-sm-3"></div>
         </div>
-     
+        <div style="margin-left:15%">
      
         <div id="container">
+        </div>
         </div>
         <br>
         <div class="modal fade" id="myModal">
