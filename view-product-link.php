@@ -13,7 +13,7 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     $outp .= '"Price":"'.$rs["Price"].'",';
     $outp .= '"Description":"'.$rs["Description"].'",';
     $outp .= '"Balance":"'.$rs["Balance"].'",';
-    $outp .= '"img":"'.$rs["img"].'.jpg"}';
+    $outp .= '"img":"img/Product/'.$rs["img"].'.jpg"}';
 }
 $outp .="]";
 

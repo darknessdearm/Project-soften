@@ -33,18 +33,32 @@
             padding: 2px 16px;
         }
         #cart{
-            font-size:24px; color: #7f7f7f; float: right;
+            font-size:24px; 
+            color:white;
+            opacity:0.4; 
+            float: right;
         }
         #cart:hover{
-            color:#444444;
+            color:white;
+            opacity:0.6; 
         }
         #cart:active{
-            color:#444444;
+            color:white;
+        }
+        #sch{
+            color:#ed553B;
+        }
+        #sch:hover{
+            color:#FF683F;
+        }
+        #sch:active{
+            color:white;
+            background-color:#ed553B;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm bg-white navbar-light fixed-top justify-content-between">
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top justify-content-between" style="background-color: #ed553B">
         <a class = "navbar-brand" href="#home">Gourmet Home Cooking</a>
         <ul class="navbar-nav mr-auto">
         <li class = "nav-item"><a class = "nav-link" href="#recipe">Recipe</a></li>
@@ -69,7 +83,7 @@
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
             <br>
-            <h1 style = "text-align: center; ">Product</h2>
+            <h1 style = "text-align: center; color:#ed553B">Product</h2>
             </div>
             <div class="col-sm-3"></div>
         </div>
@@ -82,7 +96,7 @@
             </div>
             <div class="col-sm-1">
             <form class = "from-inline">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <button class="btn btn-outline my-2 my-sm-0" type="submit" id = "sch">Search</button>
             </form>
             </div>
             <div class="col-sm-2"></div>
@@ -105,9 +119,9 @@
         </div>
         <br>
         <div class="row" style = "margin-left: 5%">
-        <div class="col" style = "float:center">
-            <div class="card" style="width:400px">
-                <img class="card-img-top" src="img/Product/default.jpg" alt="Card image" style="width:100%">
+        <div class="col" style = "float:right">
+            <div class="card" style="width:350px" data-toggle="modal" data-target="#myModal">
+                <img class="card-img-top" src="001.png" alt="Card image" style="width:100%">
                 <div class="card-body">
                 <h4 class="card-title">John Doe</h4>
                 <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
@@ -115,8 +129,8 @@
             </div>
         </div>
         <div class="col" style = "float:center">
-            <div class="card" style="width:400px">
-                <img class="card-img-top" src="img/Product/default.jpg" alt="Card image" style="width:100%">
+            <div class="card" style="width:350px">
+                <img class="card-img-top" src="002.png" alt="Card image" style="width:100%">
                 <div class="card-body">
                 <h4 class="card-title">John Doe</h4>
                 <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
@@ -124,8 +138,8 @@
             </div>
         </div>
         <div class="col" style = "float:center">
-            <div class="card" style="width:400px">
-                <img class="card-img-top" src="img/Product/default.jpg" alt="Card image" style="width:100%">
+            <div class="card" style="width:350px">
+                <img class="card-img-top" src="003.png" alt="Card image" style="width:100%">
                 <div class="card-body">
                 <h4 class="card-title">John Doe</h4>
                 <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
@@ -136,8 +150,8 @@
         <br>
         <div class="row" style = "margin-left: 5%">
         <div class="col" style = "float:right">
-            <div class="card" style="width:400px">
-                <img class="card-img-top" src="img/Product/default.jpg" alt="Card image" style="width:100%">
+            <div class="card" style="width:350px">
+                <img class="card-img-top" src="004.png" alt="Card image" style="width:100%">
                 <div class="card-body">
                 <h4 class="card-title">John Doe</h4>
                 <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
@@ -145,8 +159,8 @@
             </div>
         </div>
         <div class="col" style = "float:center">
-            <div class="card" style="width:400px">
-                <img class="card-img-top" src="img/Product/default.jpg" alt="Card image" style="width:100%">
+            <div class="card" style="width:350px">
+                <img class="card-img-top" src="005.png" alt="Card image" style="width:100%">
                 <div class="card-body">
                 <h4 class="card-title">John Doe</h4>
                 <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
@@ -154,8 +168,8 @@
             </div>
         </div>
         <div class="col" style = "float:center">
-            <div class="card" style="width:400px">
-                <img class="card-img-top" src="img/Product/default.jpg" alt="Card image" style="width:100%">
+            <div class="card" style="width:350px">
+                <img class="card-img-top" src="006.png" alt="Card image" style="width:100%">
                 <div class="card-body">
                 <h4 class="card-title">John Doe</h4>
                 <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
@@ -165,6 +179,29 @@
         </div>
         </div>
         <br>
+        <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                Modal body..
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+            </div>
+        </div>
+        </div>
         <script>
         filterSelection("all")
         function filterSelection(c) {

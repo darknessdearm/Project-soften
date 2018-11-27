@@ -41,6 +41,34 @@
         #cart:active{
             color:#444444;
         }
+
+        .flex-container {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            border: 1px solid silver;
+            -ms-box-orient: horizontal;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -moz-flex;
+            display: -webkit-flex;
+            display: flex;
+        }
+        .nowrap  { 
+            -webkit-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+        }
+        .wrap { 
+            -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+        } 
+        .flex-item {
+            margin: 3%;
+        }
+        ul {
+            border: none;
+        }
     </style>
 </head>
 <body>
@@ -65,106 +93,51 @@
         </ul>
     </nav>
         <div class="container-fluid" style="margin-top:60px">
-        <div class="row">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    <br>
+                    <h1 style = "text-align: center; ">Product</h2>
+                </div>
+                <div class="col-sm-3"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    <form class = "from-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    </form>
+                </div>
+                <div class="col-sm-1">
+                    <form class = "from-inline">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
             <br>
-            <h1 style = "text-align: center; ">Product</h2>
-            </div>
-            <div class="col-sm-3"></div>
-        </div>
-        <div class="row">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6">
-            <form class = "from-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            </form>
-            </div>
-            <div class="col-sm-1">
-            <form class = "from-inline">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-            </div>
-            <div class="col-sm-2"></div>
-        </div>
-        <br>
-        <div class = "row">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6">
-                <div id="myBtnContainer">
-                <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-                <button class="btn" onclick="filterSelection('pasta')"> Pasta</button>
-                <button class="btn" onclick="filterSelection('oil')"> Oliver Oil</button>
-                <button class="btn" onclick="filterSelection('soup')"> Soup</button>
-                <button class="btn" onclick="filterSelection('psauce')"> Pasta Sauce</button>
-                <button class="btn" onclick="filterSelection('ssauce')"> Soy Sauce</button>
-                <button class="btn" onclick="filterSelection('spice')"> Spices</button>
+            <div class = "row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
+                    <div id="myBtnContainer">
+                        <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+                        <button class="btn" onclick="filterSelection('pasta')"> Pasta</button>
+                        <button class="btn" onclick="filterSelection('oil')"> Oliver Oil</button>
+                        <button class="btn" onclick="filterSelection('soup')"> Soup</button>
+                        <button class="btn" onclick="filterSelection('psauce')"> Pasta Sauce</button>
+                        <button class="btn" onclick="filterSelection('ssauce')"> Soy Sauce</button>
+                        <button class="btn" onclick="filterSelection('spice')"> Spices</button>
+                    </div>
                 </div>
+                <div class="col-sm-3"></div>
             </div>
-            <div class="col-sm-3"></div>
-        </div>
-        <br>
-        <div class="row" style = "margin-left: 5%">
-        <div class="col" style = "float:center">
-            <div class="card" style="width:400px">
-                <img class="card-img-top" src="img/Product/default.jpg" alt="Card image" style="width:100%">
-                <div class="card-body">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                </div>
+            <br>
+            <div id="container">
+                
             </div>
+        
         </div>
-        <div class="col" style = "float:center">
-            <div class="card" style="width:400px">
-                <img class="card-img-top" src="img/Product/img2.jpg" alt="Card image" style="width:100%">
-                <div class="card-body">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                </div>
-            </div>
-        </div>
-        <div class="col" style = "float:center">
-            <div class="card" style="width:400px">
-                <img class="card-img-top" src="img/Product/default.jpg" alt="Card image" style="width:100%">
-                <div class="card-body">
-                    <h4 class="card-title">John Doe</h4>
-                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                </div>
-            </div>
-        </div>
-        </div>
-        <br>
-        <div class="row" style = "margin-left: 5%">
-        <div class="col" style = "float:right">
-            <div class="card" style="width:400px">
-                <img class="card-img-top" src="img/Product/default.jpg" alt="Card image" style="width:100%">
-                <div class="card-body">
-                <h4 class="card-title">John Doe</h4>
-                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                </div>
-            </div>
-        </div>
-        <div class="col" style = "float:center">
-            <div class="card" style="width:400px">
-                <img class="card-img-top" src="img/Product/default.jpg" alt="Card image" style="width:100%">
-                <div class="card-body">
-                <h4 class="card-title">John Doe</h4>
-                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                </div>
-            </div>
-        </div>
-        <div class="col" style = "float:center">
-            <div class="card" style="width:400px">
-                <img class="card-img-top" src="img/Product/default.jpg" alt="Card image" style="width:100%">
-                <div class="card-body">
-                <h4 class="card-title">John Doe</h4>
-                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                </div>
-            </div>
-        </div>
-        </div>
-        </div>
-        <br>
+     
         <script>
         load();
         
@@ -182,19 +155,22 @@
         }
 
         function displayResponse(response) {
-            window.arr = JSON.parse(response);
+            product = JSON.parse(response);
             
-            var out = "<div class = 'row'><div class = 'col-sm-4' ><p>รหัสประจำตัวผู้สมัคร : "+ arr[0].RecruitID +"</p>"+
-                    "<p>ชื่อ : "+ arr[0].Prefix + arr[0].FirstName +" "+ arr[0].LastName +"</p>"+
-                    "<p>ชื่อโครงการ : "+ arr[0].RecruitPlanName +"</p>"+
-                    "<p>คณะ : "+ arr[0].Faculty +"</p>"+
-                    "<p>ภาควิชา : "+ arr[0].Department +"</p></div>"+
-                    "<div class = 'col-sm-4' ><p>เลขที่ใบเสร็จ : "+ arr[0].BillRecruitID +"</p>"+
-                    "<p>วันออกใบเสร็จ : "+ arr[0].DateRegister +"</p>"+
-                    "<p>ปีการศึกษา : 1/"+ arr[0].AcademicYear +"</p>"+
-                    "<p>จำนวนเงินที่ต้องจ่าย : 20,000 บาท</p></div></div>";
-
-            document.getElementById("detail").innerHTML = out;
+            var out = "<ul class='flex-container wrap'>";
+            for( var i = 0 ; i < product.length ; i++ ) {
+                out += "<li class='flex-item'>"+
+                    "<div class='card' style='width:400px'>"+
+                        "<img class='card-img-top' src='" + product[i].img + "' alt='Card image' style='width:100%'>"+
+                        "<div class='card-body'>"+
+                            "<h4 class='card-title'>" + product[i].ProductName + "</h4>"+
+                            "<p class='card-text'>" + product[i].Description + "</p>"+
+                        "</div>"+
+                    "</div>"+
+                "</li>";
+            }
+            out += "</ul>";
+            document.getElementById("container").innerHTML = out;
         }
 
         filterSelection("all")
