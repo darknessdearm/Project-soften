@@ -183,7 +183,7 @@
             var out = "<ul class='flex-container wrap'>";
             for( var i = 0 ; i < product.length ; i++ ) {
                 out += "<li class='flex-item'>"+
-                    "<div class='card' style='width:400px'>"+
+                    "<div class='card' style='width:300px'>"+
                         "<img class='card-img-top' src='" + product[i].img + "' alt='Card image' style='width:100%'>"+
                         "<div class='card-body'>"+
                             "<h4 class='card-title'>" + product[i].ProductName + "</h4>"+

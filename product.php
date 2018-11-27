@@ -55,6 +55,10 @@
             color:white;
             background-color:#ed553B;
         }
+        p{
+            font-size:14px;
+            word-wrap: break-word;
+        }
     </style>
 </head>
 <body>
@@ -192,9 +196,14 @@
             <!-- Modal body -->
             <div class="modal-body">
                 <div class="row">
-                <div class="col-sm-3">
-                
-                </div>
+                    <div class="col-sm-6">
+                        <img src="img\product\001.png" style="width:100%">
+                    </div>
+                    <div class="col-sm-5">
+                        <h5>Price: 31 baht.</h2>
+                        <h6>Descpirtion</h1>
+                        <p>sfaifijddskfkdsfjowejgowgowwieiorucijefksjkfdkir3jdoiddkdkdkafja</p>
+                    </div>
                 </div>
             </div>
 
