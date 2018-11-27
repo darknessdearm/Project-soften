@@ -131,7 +131,7 @@
                 <button class="btn" onclick="filterSelection('oil')"> Oliver Oil</button>
                 <button class="btn" onclick="filterSelection('soup')"> Soup</button>
                 <button class="btn" onclick="filterSelection('psauce')"> Pasta Sauce</button>
-                <button class="btn" onclick="filterSelection('ssauce')"> Soy Sauce</button>
+                <button class="btn" onclick="filterSelection('Soy_Sauce')"> Soy Sauce</button>
                 <button class="btn" onclick="filterSelection('spice')"> Spices</button>
                 </div>
             </div>
