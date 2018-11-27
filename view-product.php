@@ -70,7 +70,7 @@
             -webkit-flex-wrap: wrap;
             flex-wrap: wrap;
         } 
-        .card-text {
+        .card-text,.card-title {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
