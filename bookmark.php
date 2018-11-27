@@ -66,5 +66,24 @@
         <div>
             
         </div>
+
+
+        <script>
+            load();
+        
+            function load(){
+                var xmlhttp = new XMLHttpRequest();
+                var url = location.protocol + '//' + location.host+"/Project-soften/bookmark-link.php"
+
+                xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        displayResponse(xmlhttp.responseText);
+                    }
+                }
+                xmlhttp.open("GET", url, true);
+                xmlhttp.send();
+            }
+
+        </script>
 </body>
 </html>
