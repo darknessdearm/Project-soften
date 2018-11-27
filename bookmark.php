@@ -52,6 +52,16 @@
         .flex-item {
             margin: 3%;
         }
+        #rec{
+            color:#444444;
+        }
+        #rec:hover{
+            color:white;
+            background-color:#ed553B;
+        }
+        #pd{
+            color:#ed553B;
+        }
     </style>
 </head>
 <body>
@@ -80,16 +90,26 @@
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
             <br>
-            <h1 style = "text-align: center; color:#ed553B">Bookmark</h2>
-            <h1 style = "text-align: center; color:#ed553B">Product</h2>
+            <h1 style = "text-align: center; color:#ed553B">Bookmark</h1>   
             </div>
             <div class="col-sm-3"></div>
         </div>
         </div>
-        <div id="container">
-            
+        <div class="container mt-3">
+            <ul class="nav nav-tabs" style="margin-left:5%" >
+                <li class="nav-item">
+                <a class="nav-link active" href="#pd" data-toggle="container" id="pd"  >Product</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#" id="rec" data-toggle="#">Recipe</a>
+                </li>
+            </ul>
         </div>
-
+        
+        <div id="container" style="margin-left:8%"></div>
+        
+        
+      
         <script>
             load();
         
@@ -112,7 +132,7 @@
                 var out = "<ul class='flex-container wrap'>";
                 for( var i = 0 ; i < product.length ; i++ ) {
                     out += "<li class='flex-item'>"+
-                        "<div class='card' style='width:300px'>"+
+                        "<div class='card' style='width:350px'>"+
                             "<img class='card-img-top' src='" + product[i].img + "' alt='Card image' style='width:100%'>"+
                             "<div class='card-body'>"+
                                 "<h4 class='card-title'>" + product[i].ProductName + "</h4>"+
@@ -124,7 +144,7 @@
                 out += "</ul>";
                 document.getElementById("container").innerHTML = out;
             }
-
+            
         </script>
 </body>
 </html>
