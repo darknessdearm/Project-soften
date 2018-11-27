@@ -87,7 +87,7 @@
         <ul class="navbar-nav">
         <li class="nav-item dropdown mr-sm-2"><a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Username </a>
             <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#bookmark">Bookmark</a></li>
+            <li><a class="dropdown-item" onclick="window.location.href='bookmark.php'">Bookmark</a></li>
             <li><a class="dropdown-item" href="#history">My Purchases</a></li>
             <li><a class="dropdown-item" href="#setting">Setting</a></li>
             <li><a class="dropdown-item" href="#logout">Log Out</a></li>
@@ -100,7 +100,7 @@
             <div class="row">
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6">
-                <br><h1 style = "text-align: center; color:#ed553B">Product</h2>
+                <br><h1 style = "text-align: center; color:#ed553B">Bookmark</h2>
                 </div>
                 <div class="col-sm-3"></div>
             </div>
