@@ -80,7 +80,7 @@
         <a class = "navbar-brand" href="#home">Gourmet Home Cooking</a>
         <ul class="navbar-nav mr-auto">
         <li class = "nav-item"><a class = "nav-link" href="#recipe">Recipe</a></li>
-        <li class = "nav-item"><a class = "nav-link" href="view-product.php">Product</a></li>
+        <li class = "nav-item"><a class = "nav-link" onclick="window.location.href='view-product.php'">Product</a></li>
         <li class = "nav-item"><a class = "nav-link" href="#promotion">Promotion</a></li>
         <li class = "nav-item"><a class = "nav-link" href="#contact">Contact</a></li>
         </ul>
@@ -108,13 +108,11 @@
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
                 <form class = "from-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <input id ="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 </form>
             </div>
             <div class="col-sm-1">
-                <form class = "from-inline">
-                    <button class="btn btn-outline my-2 my-sm-0" type="submit" id = "sch">Search</button>
-                </form>
+                    <button class="btn btn-outline my-2 my-sm-0" type="submit" id = "sch" onclick="SearchSelection();">Search</button>
             </div>
             <div class="col-sm-2"></div>
         </div>
@@ -209,6 +207,21 @@
                 }
             }
             xmlhttp.open("GET", url+"?filter="+c, true);
+            xmlhttp.send();
+        }
+
+        function SearchSelection() {
+            var x = document.getElementById("search").value;
+            var xmlhttp = new XMLHttpRequest();
+            var url = location.protocol + '//' + location.host+"/Project-soften/search-link.php"
+
+            xmlhttp.onreadystatechange=function() {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    displayResponse(xmlhttp.responseText);
+                }
+            }
+
+            xmlhttp.open("GET", url+"?search="+x, true);
             xmlhttp.send();
         }
 
