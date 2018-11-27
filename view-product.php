@@ -87,7 +87,7 @@
         <ul class="navbar-nav">
         <li class="nav-item dropdown mr-sm-2"><a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Username </a>
             <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#bookmark">Bookmark</a></li>
+            <li><a class="dropdown-item" onclick="window.location.href='bookmark.php'">Bookmark</a></li>
             <li><a class="dropdown-item" href="#history">My Purchases</a></li>
             <li><a class="dropdown-item" href="#setting">Setting</a></li>
             <li><a class="dropdown-item" href="#logout">Log Out</a></li>
