@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -54,6 +54,47 @@
         #sch:active{
             color:white;
             background-color:#ed553B;
+        }
+        #addCart{
+            color:white;
+            background-color:#ed553B;
+        }
+        #addCart:hover{
+            border-radius: 5px;
+            border: 1.5px solid #ed553B;
+            color:#ed553B;
+            background-color:white;
+        }
+        #addCart:active{
+            color:white;
+            background-color:#ed553B;
+        }
+        #addBookmark{
+            border-radius: 5px;
+            border: 1.5px solid #ffbf00;
+            background-color:#fcfcfc;
+        }
+        #addBookmark:hover{
+            color:black;
+            background-color:#ffbf00;
+        }
+        p{
+            font-size:14px;
+            word-wrap: break-word;
+        }
+        .num{
+            position:absolute;
+            top:5px;
+            right:3px;
+            width:20px;
+            height:20px;
+            border-radius:50%;
+            background:white;
+            color:red;
+            line-height:20px;
+            font-size:12px;
+            font-family:sans-serif;
+            text-align:center;
         }
         .flex-container {
             padding: 0;
@@ -139,32 +180,11 @@
         </div>
         <div style="margin-left:15%">
      
-        <div id="container">
-        </div>
+        <div id="container"></div>
+        <div id="pmodal"></div>
         </div>
         <br>
-        <div class="modal fade" id="myModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Modal Heading</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                Modal body..
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
-
-            </div>
-        </div>
+        
         </div>
         <script>
 
@@ -189,7 +209,7 @@
             var out = "<ul class='flex-container wrap'>";
             for( var i = 0 ; i < product.length ; i++ ) {
                 out += "<li class='flex-item'>"+
-                    "<div class='card' style='width:300px'>"+
+                    "<div class='card' style='width:300px' data-toggle='modal' data-target='#p" + product[i].ProductID +"'>"+
                         "<img class='card-img-top' src='" + product[i].img + "' alt='Card image' style='width:100%'>"+
                         "<div class='card-body'>"+
                             "<h4 class='card-title'>" + product[i].ProductName + "</h4>"+
@@ -199,7 +219,43 @@
                 "</li>";
             }
             out += "</ul>";
+            
+            var outModal = "";
+            for( var i = 0 ; i < product.length ; i++ ) {
+                outModal += "<div class='modal fade' id='p" + product[i].ProductID + "'>"+
+                    "<div class='modal-dialog modal-lg'>"+
+                        "<div class='modal-content'>"+
+                            "<div class='modal-header'>"+
+                                "<h4 class='modal-title'>" + product[i].ProductName + "</h4>"+
+                                "<button type='button' class='close' data-dismiss='modal'>&times;</button>"+
+                            "</div>"+
+                            "<div class='modal-body'>"+
+                                "<div class='row'>"+
+                                    "<div class='col-sm-6'>"+
+                                        "<img src='" + product[i].img + "' style='width:100%'>"+
+                                    "</div>"+
+                                    "<div class='col-sm-5'>"+
+                                        "<h5>Price: " + product[i].Price + " baht.</h2>"+
+                                        "<h6>Descpirtion: </h1>"+
+                                        "<p>" + product[i].Description + "</p>"+
+                                    "</div>"+
+                                "</div>"+
+                            "</div>"+
+                            "<div class='modal-footer'>"+
+                                "<div class='col-sm-5'>"+
+                                    "<button type='button' class='btn btn-outline-warning' id='addBookmark'>Add Bookmark</button>"+
+                                "</div>"+
+                                "<div class='col-sm-4'>"+
+                                    "<button type='button' class='btn btn' id='addCart'>Add to Cart</button>"+
+                                "</div>"+
+                                "<div class'col-sm-1'></div>"+
+                            "</div>"+
+                        "</div>"+
+                    "</div>"+
+                "</div>";
+            }
             document.getElementById("container").innerHTML = out;
+            document.getElementById("pmodal").innerHTML = outModal;
         }
         
         filterSelection("all")
