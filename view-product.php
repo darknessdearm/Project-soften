@@ -183,6 +183,8 @@
         }
 
         function displayResponse(response) {
+            console.log(response)
+            window.result = response
             product = JSON.parse(response);
             
             var out = "<ul class='flex-container wrap'>";
