@@ -178,9 +178,9 @@
             </div>
             <div class="col-sm-3"></div>
         </div>
-        <div style="margin-left:8%">
+        <div>
      
-        <div id="container"></div>
+        <div id="container"  style="margin-left:8%"></div>
         <div id="pmodal"></div>
         </div>
         <br>
@@ -242,13 +242,13 @@
                                 "</div>"+
                             "</div>"+
                             "<div class='modal-footer'>"+
-                                "<div class='col-sm-5'>"+
+                                "<div class='col-sm-6'>"+
                                     "<button type='button' class='btn btn-outline-warning' id='addBookmark'>Add Bookmark</button>"+
                                 "</div>"+
                                 "<div class='col-sm-4'>"+
                                     "<button type='button' class='btn btn' id='addCart'>Add to Cart</button>"+
                                 "</div>"+
-                                "<div class'col-sm-1'></div>"+
+                                "<div class'col-sm-2'></div>"+
                             "</div>"+
                         "</div>"+
                     "</div>"+
