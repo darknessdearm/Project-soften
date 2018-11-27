@@ -127,7 +127,7 @@
                 <button class="btn" onclick="filterSelection('soup')"> Soup</button>
                 <button class="btn" onclick="filterSelection('Pasta_Sauce')"> Pasta Sauce</button>
                 <button class="btn" onclick="filterSelection('Soy_Sauce')"> Soy Sauce</button>
-                <button class="btn" onclick="filterSelection('spice')"> Spices</button>
+                <button class="btn" onclick="filterSelection('spices')"> Spices</button>
                 </div>
             </div>
             <div class="col-sm-3"></div>
