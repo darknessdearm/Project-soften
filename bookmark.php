@@ -36,7 +36,7 @@
         <a class = "navbar-brand" href="#home">Gourmet Home Cooking</a>
         <ul class="navbar-nav mr-auto">
         <li class = "nav-item"><a class = "nav-link" href="#recipe">Recipe</a></li>
-        <li class = "nav-item"><a class = "nav-link" href="product.php">Product</a></li>
+        <li class = "nav-item"><a class = "nav-link" onclick="window.location.href='view-product.php'">Product</a></li>
         <li class = "nav-item"><a class = "nav-link" href="#promotion">Promotion</a></li>
         <li class = "nav-item"><a class = "nav-link" href="#contact">Contact</a></li>
         </ul>
@@ -58,9 +58,13 @@
             <div class="col-sm-6">
             <br>
             <h1 style = "text-align: center; color:#ed553B">Bookmark</h2>
+            <h1 style = "text-align: center; color:#ed553B">Product</h2>
             </div>
             <div class="col-sm-3"></div>
         </div>
+        </div>
+        <div>
+            
         </div>
 </body>
 </html>
