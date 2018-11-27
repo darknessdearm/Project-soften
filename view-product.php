@@ -33,26 +33,33 @@
             padding: 2px 16px;
         }
         #cart{
-            font-size:24px; color: #7f7f7f; float: right;
+            font-size:24px; 
+            color:white;
+            opacity:0.4; 
+            float: right;
         }
         #cart:hover{
-            color:#444444;
+            color:white;
+            opacity:0.6; 
         }
         #cart:active{
-            color:#444444;
+            color:white;
         }
-
+        #sch{
+            color:#ed553B;
+        }
+        #sch:hover{
+            color:#FF683F;
+        }
+        #sch:active{
+            color:white;
+            background-color:#ed553B;
+        }
         .flex-container {
             padding: 0;
             margin: 0;
             list-style: none;
-            border: 1px solid silver;
             -ms-box-orient: horizontal;
-            display: -webkit-box;
-            display: -moz-box;
-            display: -ms-flexbox;
-            display: -moz-flex;
-            display: -webkit-flex;
             display: flex;
         }
         .nowrap  { 
@@ -66,13 +73,10 @@
         .flex-item {
             margin: 3%;
         }
-        ul {
-            border: none;
-        }
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm bg-white navbar-light fixed-top justify-content-between">
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top justify-content-between" style="background-color: #ed553B">
         <a class = "navbar-brand" href="#home">Gourmet Home Cooking</a>
         <ul class="navbar-nav mr-auto">
         <li class = "nav-item"><a class = "nav-link" href="#recipe">Recipe</a></li>
@@ -96,49 +100,70 @@
             <div class="row">
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6">
-                    <br>
-                    <h1 style = "text-align: center; ">Product</h2>
+                <br><h1 style = "text-align: center; color:#ed553B">Product</h2>
                 </div>
                 <div class="col-sm-3"></div>
             </div>
-            <div class="row">
-                <div class="col-sm-3"></div>
-                <div class="col-sm-6">
-                    <form class = "from-inline">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    </form>
-                </div>
-                <div class="col-sm-1">
-                    <form class = "from-inline">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
-                </div>
-                <div class="col-sm-2"></div>
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <form class = "from-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                </form>
             </div>
-            <br>
-            <div class = "row">
-                <div class="col-sm-3"></div>
-                <div class="col-sm-6">
-                    <div id="myBtnContainer">
-                        <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-                        <button class="btn" onclick="filterSelection('pasta')"> Pasta</button>
-                        <button class="btn" onclick="filterSelection('oil')"> Oliver Oil</button>
-                        <button class="btn" onclick="filterSelection('soup')"> Soup</button>
-                        <button class="btn" onclick="filterSelection('psauce')"> Pasta Sauce</button>
-                        <button class="btn" onclick="filterSelection('ssauce')"> Soy Sauce</button>
-                        <button class="btn" onclick="filterSelection('spice')"> Spices</button>
-                    </div>
+            <div class="col-sm-1">
+                <form class = "from-inline">
+                    <button class="btn btn-outline my-2 my-sm-0" type="submit" id = "sch">Search</button>
+                </form>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <br>
+        <div class = "row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <div id="myBtnContainer">
+                <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+                <button class="btn" onclick="filterSelection('pasta')"> Pasta</button>
+                <button class="btn" onclick="filterSelection('oil')"> Oliver Oil</button>
+                <button class="btn" onclick="filterSelection('soup')"> Soup</button>
+                <button class="btn" onclick="filterSelection('psauce')"> Pasta Sauce</button>
+                <button class="btn" onclick="filterSelection('ssauce')"> Soy Sauce</button>
+                <button class="btn" onclick="filterSelection('spice')"> Spices</button>
                 </div>
-                <div class="col-sm-3"></div>
             </div>
-            <br>
-            <div id="container">
-                
-            </div>
-        
+            <div class="col-sm-3"></div>
         </div>
      
+     
+        <div id="container">
+        </div>
+        <br>
+        <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                Modal body..
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+            </div>
+        </div>
+        </div>
         <script>
+
         load();
         
         function load(){
@@ -172,16 +197,19 @@
             out += "</ul>";
             document.getElementById("container").innerHTML = out;
         }
-
+        
         filterSelection("all")
         function filterSelection(c) {
-        var x, i;
-        x = document.getElementsByClassName("filterDiv");
-        if (c == "all") c = "";
-        for (i = 0; i < x.length; i++) {
-            w3RemoveClass(x[i], "show");
-            if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-        }
+            var xmlhttp = new XMLHttpRequest();
+            var url = location.protocol + '//' + location.host+"/Projest-soften/view-product-link.php"
+
+            xmlhttp.onreadystatechange=function() {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    displayResponse(xmlhttp.responseText);
+                }
+            }
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
         }
 
         function w3AddClass(element, name) {
