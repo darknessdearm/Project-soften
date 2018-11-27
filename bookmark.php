@@ -29,6 +29,24 @@
         #cart:active{
             color:white;
         }
+        .flex-container {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            -ms-box-orient: horizontal;
+            display: flex;
+        }
+        .nowrap  { 
+            -webkit-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+        }
+        .wrap { 
+            -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+        } 
+        .flex-item {
+            margin: 3%;
+        }
     </style>
 </head>
 <body>
@@ -63,10 +81,9 @@
             <div class="col-sm-3"></div>
         </div>
         </div>
-        <div>
+        <div id="container">
             
         </div>
-
 
         <script>
             load();
@@ -82,6 +99,25 @@
                 }
                 xmlhttp.open("GET", url, true);
                 xmlhttp.send();
+            }
+
+            function displayResponse(response) {
+                product = JSON.parse(response);
+                
+                var out = "<ul class='flex-container wrap'>";
+                for( var i = 0 ; i < product.length ; i++ ) {
+                    out += "<li class='flex-item'>"+
+                        "<div class='card' style='width:300px'>"+
+                            "<img class='card-img-top' src='" + product[i].img + "' alt='Card image' style='width:100%'>"+
+                            "<div class='card-body'>"+
+                                "<h4 class='card-title'>" + product[i].ProductName + "</h4>"+
+                                "<p class='card-text'>" + product[i].Description + "</p>"+
+                            "</div>"+
+                        "</div>"+
+                    "</li>";
+                }
+                out += "</ul>";
+                document.getElementById("container").innerHTML = out;
             }
 
         </script>

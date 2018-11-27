@@ -122,12 +122,12 @@
             <div class="col-sm-6">
                 <div id="myBtnContainer">
                 <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-                <button class="btn" onclick="filterSelection('pasta')"> Pasta</button>
-                <button class="btn" onclick="filterSelection('oil')"> Oliver Oil</button>
-                <button class="btn" onclick="filterSelection('soup')"> Soup</button>
-                <button class="btn" onclick="filterSelection('psauce')"> Pasta Sauce</button>
+                <button class="btn" onclick="filterSelection('Pasta')"> Pasta</button>
+                <button class="btn" onclick="filterSelection('Olive_Oil')"> Olive Oil</button>
+                <button class="btn" onclick="filterSelection('Soup')"> Soup</button>
+                <button class="btn" onclick="filterSelection('Pasta_sauce')"> Pasta Sauce</button>
                 <button class="btn" onclick="filterSelection('Soy_Sauce')"> Soy Sauce</button>
-                <button class="btn" onclick="filterSelection('spice')"> Spices</button>
+                <button class="btn" onclick="filterSelection('Spices')"> Spices</button>
                 </div>
             </div>
             <div class="col-sm-3"></div>
