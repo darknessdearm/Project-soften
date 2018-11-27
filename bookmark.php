@@ -52,6 +52,16 @@
         .flex-item {
             margin: 3%;
         }
+        #rec{
+            color:#444444;
+        }
+        #rec:hover{
+            color:white;
+            background-color:#ed553B;
+        }
+        #rec> .nav-link > .active{
+            color:#ed553B;
+        }
     </style>
 </head>
 <body>
@@ -80,17 +90,26 @@
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
             <br>
-            <h1 style = "text-align: center; color:#ed553B">Bookmark</h2>
-            <h1 style = "text-align: center; color:#ed553B">Product</h2>
+            <h1 style = "text-align: center; color:#ed553B">Bookmark</h1>   
             </div>
             <div class="col-sm-3"></div>
         </div>
         </div>
-        
-        <div id="container" style="margin-left:10%">
-            
+        <div class="container mt-3">
+            <ul class="nav nav-tabs" style="margin-left:5%" >
+                <li class="nav-item">
+                <a class="nav-link active" href="#pd" data-toggle="container" id="rec" >Product</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#" id="rec" data-toggle="#">Recipe</a>
+                </li>
+            </ul>
         </div>
-
+        
+        <div id="container" style="margin-left:8%"></div>
+        
+        
+      
         <script>
             load();
         
@@ -125,7 +144,7 @@
                 out += "</ul>";
                 document.getElementById("container").innerHTML = out;
             }
-
+            
         </script>
 </body>
 </html>
