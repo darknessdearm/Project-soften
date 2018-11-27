@@ -121,7 +121,7 @@
         <div class="row" style = "margin-left: 5%">
         <div class="col" style = "float:right">
             <div class="card" style="width:350px" data-toggle="modal" data-target="#myModal">
-                <img class="card-img-top" src="001.png" alt="Card image" style="width:100%">
+                <img class="card-img-top" src="img\Product\001.png" alt="Card image" style="width:100%">
                 <div class="card-body">
                 <h4 class="card-title">John Doe</h4>
                 <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
@@ -130,7 +130,7 @@
         </div>
         <div class="col" style = "float:center">
             <div class="card" style="width:350px">
-                <img class="card-img-top" src="002.png" alt="Card image" style="width:100%">
+                <img class="card-img-top" src="img\Product\002.png" alt="Card image" style="width:100%">
                 <div class="card-body">
                 <h4 class="card-title">John Doe</h4>
                 <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
@@ -139,7 +139,7 @@
         </div>
         <div class="col" style = "float:center">
             <div class="card" style="width:350px">
-                <img class="card-img-top" src="003.png" alt="Card image" style="width:100%">
+                <img class="card-img-top" src="img\Product\003.png" alt="Card image" style="width:100%">
                 <div class="card-body">
                 <h4 class="card-title">John Doe</h4>
                 <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
@@ -151,7 +151,7 @@
         <div class="row" style = "margin-left: 5%">
         <div class="col" style = "float:right">
             <div class="card" style="width:350px">
-                <img class="card-img-top" src="004.png" alt="Card image" style="width:100%">
+                <img class="card-img-top" src="img\Product\004.png" alt="Card image" style="width:100%">
                 <div class="card-body">
                 <h4 class="card-title">John Doe</h4>
                 <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
@@ -160,7 +160,7 @@
         </div>
         <div class="col" style = "float:center">
             <div class="card" style="width:350px">
-                <img class="card-img-top" src="005.png" alt="Card image" style="width:100%">
+                <img class="card-img-top" src="img\Product\005.png" alt="Card image" style="width:100%">
                 <div class="card-body">
                 <h4 class="card-title">John Doe</h4>
                 <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
@@ -169,7 +169,7 @@
         </div>
         <div class="col" style = "float:center">
             <div class="card" style="width:350px">
-                <img class="card-img-top" src="006.png" alt="Card image" style="width:100%">
+                <img class="card-img-top" src="img\Product\006.png" alt="Card image" style="width:100%">
                 <div class="card-body">
                 <h4 class="card-title">John Doe</h4>
                 <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
@@ -185,14 +185,17 @@
 
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">Modal Heading</h4>
+                <h4 class="modal-title">Product Name</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
             <!-- Modal body -->
             <div class="modal-body">
-                <img src="" alt="">
-
+                <div class="row">
+                <div class="col-sm-3">
+                
+                </div>
+                </div>
             </div>
 
             <!-- Modal footer -->
@@ -203,6 +206,7 @@
             </div>
         </div>
         </div>
+
         <script>
         filterSelection("all")
         function filterSelection(c) {
