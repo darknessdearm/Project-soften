@@ -243,7 +243,7 @@
                             "</div>"+
                             "<div class='modal-footer'>"+
                                 "<div class='col-sm-5'>"+
-                                    "<button type='button' class='btn btn-outline-warning' id='addBookmark'>Add Bookmark</button>"+
+                                    "<button type='button' class='btn btn-outline-warning' id='addBookmark' onclick='bookMarkSelection(" + product[i].ProductID + ")'>Add Bookmark</button>"+
                                 "</div>"+
                                 "<div class='col-sm-4'>"+
                                     "<button type='button' class='btn btn' id='addCart'>Add to Cart</button>"+
