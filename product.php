@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
@@ -60,12 +60,14 @@
             background-color:#ed553B;
         }
         #addCart:hover{
-            color:#eeeeee;
-            background-color:#DE5637;
-        }
-        #addCart:active{
+            border-radius: 5px;
+            border: 1.5px solid #ed553B;
             color:#ed553B;
             background-color:white;
+        }
+        #addCart:active{
+            color:white;
+            background-color:#ed553B;
         }
         #addBookmark{
             border-radius: 5px;
@@ -79,6 +81,20 @@
         p{
             font-size:14px;
             word-wrap: break-word;
+        }
+        .num{
+            position:absolute;
+            top:5px;
+            right:3px;
+            width:20px;
+            height:20px;
+            border-radius:50%;
+            background:white;
+            color:red;
+            line-height:20px;
+            font-size:12px;
+            font-family:sans-serif;
+            text-align:center;
         }
     </style>
 </head>
@@ -100,7 +116,10 @@
             <li><a class="dropdown-item" href="#logout">Log Out</a></li>
             </ul>
         </li>
-        <li class = "nav-item my-2 my-sm-0t"><a href="#cart" id = "cart" class='fas fa-shopping-cart'></a></li>
+        <li class = "nav-item my-2 my-sm-0t">
+            <a href="#cart" id = "cart" class='fas fa-shopping-cart'></a>
+            <span class="num">1</span>
+        </li>
         </ul>
     </nav>
         <div class="container-fluid" style="margin-top:60px">
@@ -205,7 +224,7 @@
         </div>
         <br>
         <div class="modal fade" id="myModal">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
 
             <!-- Modal Header -->
