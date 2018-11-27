@@ -55,9 +55,46 @@
             color:white;
             background-color:#ed553B;
         }
+        #addCart{
+            color:white;
+            background-color:#ed553B;
+        }
+        #addCart:hover{
+            border-radius: 5px;
+            border: 1.5px solid #ed553B;
+            color:#ed553B;
+            background-color:white;
+        }
+        #addCart:active{
+            color:white;
+            background-color:#ed553B;
+        }
+        #addBookmark{
+            border-radius: 5px;
+            border: 1.5px solid #ffbf00;
+            background-color:#fcfcfc;
+        }
+        #addBookmark:hover{
+            color:black;
+            background-color:#ffbf00;
+        }
         p{
             font-size:14px;
             word-wrap: break-word;
+        }
+        .num{
+            position:absolute;
+            top:5px;
+            right:3px;
+            width:20px;
+            height:20px;
+            border-radius:50%;
+            background:white;
+            color:red;
+            line-height:20px;
+            font-size:12px;
+            font-family:sans-serif;
+            text-align:center;
         }
     </style>
 </head>
@@ -79,7 +116,10 @@
             <li><a class="dropdown-item" href="#logout">Log Out</a></li>
             </ul>
         </li>
-        <li class = "nav-item my-2 my-sm-0t"><a href="#cart" id = "cart" class='fas fa-shopping-cart'></a></li>
+        <li class = "nav-item my-2 my-sm-0t">
+            <a href="#cart" id = "cart" class='fas fa-shopping-cart'></a>
+            <span class="num">1</span>
+        </li>
         </ul>
     </nav>
         <div class="container-fluid" style="margin-top:60px">
@@ -184,7 +224,7 @@
         </div>
         <br>
         <div class="modal fade" id="myModal">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
 
             <!-- Modal Header -->
@@ -209,7 +249,14 @@
 
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <!-- <div class="col-sm-1"></div> -->
+                <div class="col-sm-5">
+                    <button type="button" class="btn btn-outline-warning" id="addBookmark">Add Bookmark</button>
+                </div>
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn" id="addCart">Add to Cart</button>
+                </div>
+                <div class="col-sm-1"></div>
             </div>
 
             </div>
