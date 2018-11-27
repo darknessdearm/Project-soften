@@ -1,6 +1,6 @@
 <?php
 require_once "dblink.php";
-$sql = "SELECT * FROM product";
+$sql = "SELECT * FROM product WHERE ProductID IN (SELECT ProductID From bookmark WHERE UserID = 1)";
 $result = connect_database($sql);
 
 $outp = "[";
