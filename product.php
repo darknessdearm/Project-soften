@@ -55,6 +55,10 @@
             color:white;
             background-color:#ed553B;
         }
+        p{
+            font-size:14px;
+            word-wrap: break-word;
+        }
     </style>
 </head>
 <body>
@@ -62,14 +66,14 @@
         <a class = "navbar-brand" href="#home">Gourmet Home Cooking</a>
         <ul class="navbar-nav mr-auto">
         <li class = "nav-item"><a class = "nav-link" href="#recipe">Recipe</a></li>
-        <li class = "nav-item"><a class = "nav-link" href="#product">Product</a></li>
+        <li class = "nav-item"><a class = "nav-link" href="product.php">Product</a></li>
         <li class = "nav-item"><a class = "nav-link" href="#promotion">Promotion</a></li>
         <li class = "nav-item"><a class = "nav-link" href="#contact">Contact</a></li>
         </ul>
         <ul class="navbar-nav">
         <li class="nav-item dropdown mr-sm-2"><a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Username </a>
             <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#bookmark">Bookmark</a></li>
+            <li><a class="dropdown-item" href="bookmark.php">Bookmark</a></li>
             <li><a class="dropdown-item" href="#history">My Purchases</a></li>
             <li><a class="dropdown-item" href="#setting">Setting</a></li>
             <li><a class="dropdown-item" href="#logout">Log Out</a></li>
@@ -121,7 +125,7 @@
         <div class="row" style = "margin-left: 5%">
         <div class="col" style = "float:right">
             <div class="card" style="width:350px" data-toggle="modal" data-target="#myModal">
-                <img class="card-img-top" src="001.png" alt="Card image" style="width:100%">
+                <img class="card-img-top" src="img\Product\001.png" alt="Card image" style="width:100%">
                 <div class="card-body">
                 <h4 class="card-title">John Doe</h4>
                 <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
@@ -130,7 +134,7 @@
         </div>
         <div class="col" style = "float:center">
             <div class="card" style="width:350px">
-                <img class="card-img-top" src="002.png" alt="Card image" style="width:100%">
+                <img class="card-img-top" src="img\Product\002.png" alt="Card image" style="width:100%">
                 <div class="card-body">
                 <h4 class="card-title">John Doe</h4>
                 <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
@@ -139,7 +143,7 @@
         </div>
         <div class="col" style = "float:center">
             <div class="card" style="width:350px">
-                <img class="card-img-top" src="003.png" alt="Card image" style="width:100%">
+                <img class="card-img-top" src="img\Product\003.png" alt="Card image" style="width:100%">
                 <div class="card-body">
                 <h4 class="card-title">John Doe</h4>
                 <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
@@ -151,7 +155,7 @@
         <div class="row" style = "margin-left: 5%">
         <div class="col" style = "float:right">
             <div class="card" style="width:350px">
-                <img class="card-img-top" src="004.png" alt="Card image" style="width:100%">
+                <img class="card-img-top" src="img\Product\004.png" alt="Card image" style="width:100%">
                 <div class="card-body">
                 <h4 class="card-title">John Doe</h4>
                 <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
@@ -160,7 +164,7 @@
         </div>
         <div class="col" style = "float:center">
             <div class="card" style="width:350px">
-                <img class="card-img-top" src="005.png" alt="Card image" style="width:100%">
+                <img class="card-img-top" src="img\Product\005.png" alt="Card image" style="width:100%">
                 <div class="card-body">
                 <h4 class="card-title">John Doe</h4>
                 <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
@@ -169,7 +173,7 @@
         </div>
         <div class="col" style = "float:center">
             <div class="card" style="width:350px">
-                <img class="card-img-top" src="006.png" alt="Card image" style="width:100%">
+                <img class="card-img-top" src="img\Product\006.png" alt="Card image" style="width:100%">
                 <div class="card-body">
                 <h4 class="card-title">John Doe</h4>
                 <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
@@ -185,13 +189,22 @@
 
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">Modal Heading</h4>
+                <h4 class="modal-title">Product Name</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
             <!-- Modal body -->
             <div class="modal-body">
-                Modal body..
+                <div class="row">
+                    <div class="col-sm-6">
+                        <img src="img\product\001.png" style="width:100%">
+                    </div>
+                    <div class="col-sm-5">
+                        <h5>Price: 31 baht.</h2>
+                        <h6>Descpirtion</h1>
+                        <p>sfaifijddskfkdsfjowejgowgowwieiorucijefksjkfdkir3jdoiddkdkdkafja</p>
+                    </div>
+                </div>
             </div>
 
             <!-- Modal footer -->
@@ -202,6 +215,7 @@
             </div>
         </div>
         </div>
+
         <script>
         filterSelection("all")
         function filterSelection(c) {

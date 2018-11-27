@@ -85,14 +85,14 @@
         <a class = "navbar-brand" href="#home">Gourmet Home Cooking</a>
         <ul class="navbar-nav mr-auto">
         <li class = "nav-item"><a class = "nav-link" href="#recipe">Recipe</a></li>
-        <li class = "nav-item"><a class = "nav-link" href="#product">Product</a></li>
+        <li class = "nav-item"><a class = "nav-link" onclick="window.location.href='view-product.php'">Product</a></li>
         <li class = "nav-item"><a class = "nav-link" href="#promotion">Promotion</a></li>
         <li class = "nav-item"><a class = "nav-link" href="#contact">Contact</a></li>
         </ul>
         <ul class="navbar-nav">
         <li class="nav-item dropdown mr-sm-2"><a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Username </a>
             <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#bookmark">Bookmark</a></li>
+            <li><a class="dropdown-item" onclick="window.location.href='bookmark.php'">Bookmark</a></li>
             <li><a class="dropdown-item" href="#history">My Purchases</a></li>
             <li><a class="dropdown-item" href="#setting">Setting</a></li>
             <li><a class="dropdown-item" href="#logout">Log Out</a></li>
@@ -113,13 +113,11 @@
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
                 <form class = "from-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <input id ="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 </form>
             </div>
             <div class="col-sm-1">
-                <form class = "from-inline">
-                    <button class="btn btn-outline my-2 my-sm-0" type="submit" id = "sch">Search</button>
-                </form>
+                    <button class="btn btn-outline my-2 my-sm-0" type="submit" id = "sch" onclick="SearchSelection();">Search</button>
             </div>
             <div class="col-sm-2"></div>
         </div>
@@ -190,7 +188,7 @@
             var out = "<ul class='flex-container wrap'>";
             for( var i = 0 ; i < product.length ; i++ ) {
                 out += "<li class='flex-item'>"+
-                    "<div class='card' style='width:400px'>"+
+                    "<div class='card' style='width:300px'>"+
                         "<img class='card-img-top' src='" + product[i].img + "' alt='Card image' style='width:100%'>"+
                         "<div class='card-body'>"+
                             "<h4 class='card-title'>" + product[i].ProductName + "</h4>"+
@@ -206,14 +204,29 @@
         filterSelection("all")
         function filterSelection(c) {
             var xmlhttp = new XMLHttpRequest();
-            var url = location.protocol + '//' + location.host+"/Project-soften/view-product-link.php"
+            var url = location.protocol + '//' + location.host+"/Project-soften/filter-link.php"
 
             xmlhttp.onreadystatechange=function() {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                     displayResponse(xmlhttp.responseText);
                 }
             }
-            xmlhttp.open("GET", url, true);
+            xmlhttp.open("GET", url+"?filter="+c, true);
+            xmlhttp.send();
+        }
+
+        function SearchSelection() {
+            var x = document.getElementById("search").value;
+            var xmlhttp = new XMLHttpRequest();
+            var url = location.protocol + '//' + location.host+"/Project-soften/search-link.php"
+
+            xmlhttp.onreadystatechange=function() {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    displayResponse(xmlhttp.responseText);
+                }
+            }
+
+            xmlhttp.open("GET", url+"?search="+x, true);
             xmlhttp.send();
         }
 
