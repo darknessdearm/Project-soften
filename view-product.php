@@ -70,6 +70,11 @@
             -webkit-flex-wrap: wrap;
             flex-wrap: wrap;
         } 
+        .card-text {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
         .flex-item {
             margin: 3%;
         }
