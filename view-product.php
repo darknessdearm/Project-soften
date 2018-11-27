@@ -119,6 +119,22 @@
         .flex-item {
             margin: 3%;
         }
+        .btn {
+        border: none;
+        outline: none;
+        padding: 12px 16px;
+        background-color: #f1f1f1;
+        cursor: pointer;
+        }
+
+        .btn:hover {
+        background-color: #ddd;
+        }
+
+        .btn.active {
+        background-color: #ed553B;
+        color: white;
+        }
     </style>
 </head>
 <body>
