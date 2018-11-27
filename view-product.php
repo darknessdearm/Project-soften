@@ -258,13 +258,8 @@
                                 "</div>"+
                             "</div>"+
                             "<div class='modal-footer'>"+
-<<<<<<< HEAD
-                                "<div class='col-sm-5'>"+
-                                    "<button type='button' class='btn btn-outline-warning' id='addBookmark' onclick='bookMarkSelection(" + product[i].ProductID + ")'>Add Bookmark</button>"+
-=======
                                 "<div class='col-sm-6'>"+
-                                    "<button type='button' class='btn btn-outline-warning' id='addBookmark'>Add Bookmark</button>"+
->>>>>>> ccbf8fe202f08a6c00f62fc5199ff414a3577a00
+                                    "<button type='button' class='btn btn-outline-warning' id='addBookmark' onclick='bookMarkSelection(" + product[i].ProductID + ")'>Add Bookmark</button>"+
                                 "</div>"+
                                 "<div class='col-sm-4'>"+
                                     "<button type='button' class='btn btn' id='addCart'>Add to Cart</button>"+
@@ -282,7 +277,7 @@
         function bookMarkSelection(b) {
             var xmlhttp = new XMLHttpRequest();
             var url = location.protocol + '//' + location.host+"/Project-soften/add-bookmark-link.php"
-
+            
             xmlhttp.onreadystatechange=function() {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                     displayResponse(xmlhttp.responseText);
