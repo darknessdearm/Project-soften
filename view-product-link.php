@@ -1,7 +1,7 @@
 <?php
 require_once "dblink.php";
 $sql = "SELECT * FROM product";
-$result = connection_database($sql);
+$result = connect_database($sql);
 
 $outp = "[";
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
