@@ -4,7 +4,7 @@ $sql = "SELECT * FROM product";
 $result = connect_database($sql);
 
 $outp = "[";
-while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
+while($rs = $result->fetch_array()) {
     if ($outp != "[") {$outp .= ",";}
     $outp .= '{"ProductID":"'.$rs["ProductID"].'",';
     $outp .= '"ProductName":"'.$rs["ProductName"].'",';
