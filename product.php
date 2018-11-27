@@ -108,7 +108,7 @@
                 <div id="myBtnContainer">
                 <button class="btn active" onclick="filterSelection('all')"> Show all</button>
                 <button class="btn" onclick="filterSelection('pasta')"> Pasta</button>
-                <button class="btn" onclick="filterSelection('oil')"> Oliver Oil</button>
+                <button class="btn" onclick="filterSelection('oil')"> Olive Oil</button>
                 <button class="btn" onclick="filterSelection('soup')"> Soup</button>
                 <button class="btn" onclick="filterSelection('psauce')"> Pasta Sauce</button>
                 <button class="btn" onclick="filterSelection('ssauce')"> Soy Sauce</button>
