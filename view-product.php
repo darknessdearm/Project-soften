@@ -100,7 +100,7 @@
             <div class="row">
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6">
-                <br><h1 style = "text-align: center; color:#ed553B">Bookmark</h2>
+                <br><h1 style = "text-align: center; color:#ed553B">Product</h2>
                 </div>
                 <div class="col-sm-3"></div>
             </div>
