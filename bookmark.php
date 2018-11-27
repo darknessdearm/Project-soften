@@ -59,7 +59,7 @@
             color:white;
             background-color:#ed553B;
         }
-        #rec> .nav-link > .active{
+        #pd{
             color:#ed553B;
         }
     </style>
@@ -98,7 +98,7 @@
         <div class="container mt-3">
             <ul class="nav nav-tabs" style="margin-left:5%" >
                 <li class="nav-item">
-                <a class="nav-link active" href="#pd" data-toggle="container" id="rec" >Product</a>
+                <a class="nav-link active" href="#pd" data-toggle="container" id="pd"  >Product</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="#" id="rec" data-toggle="#">Recipe</a>
