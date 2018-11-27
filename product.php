@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
@@ -54,6 +54,27 @@
         #sch:active{
             color:white;
             background-color:#ed553B;
+        }
+        #addCart{
+            color:white;
+            background-color:#ed553B;
+        }
+        #addCart:hover{
+            color:#eeeeee;
+            background-color:#DE5637;
+        }
+        #addCart:active{
+            color:#ed553B;
+            background-color:white;
+        }
+        #addBookmark{
+            border-radius: 5px;
+            border: 1.5px solid #ffbf00;
+            background-color:#fcfcfc;
+        }
+        #addBookmark:hover{
+            color:black;
+            background-color:#ffbf00;
         }
         p{
             font-size:14px;
@@ -209,7 +230,14 @@
 
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <!-- <div class="col-sm-1"></div> -->
+                <div class="col-sm-5">
+                    <button type="button" class="btn btn-outline-warning" id="addBookmark">Add Bookmark</button>
+                </div>
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn" id="addCart">Add to Cart</button>
+                </div>
+                <div class="col-sm-1"></div>
             </div>
 
             </div>
