@@ -31,7 +31,7 @@
   background-color: #ddd;
 }
 
-.btn > .active {
+.btn.active {
   background-color: #ed553B;
   color: white;
 }
