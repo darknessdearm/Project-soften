@@ -82,9 +82,19 @@
             color:black;
             border-radius: 5px;
             border: 1.5px solid #ffbf00;
-            background-color:#ffbf00
+            background-color:#ffbf00;
         }
-        
+        #pd{
+            color:#ed553B;
+        }
+        #rec{
+            color:white;
+            background-color:#ed553B;
+        }
+        #rec:hover{
+            color:white;
+            background-color:tomato;
+        }
         p{
             font-size:14px;
             word-wrap: break-word;
