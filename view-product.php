@@ -383,7 +383,7 @@
         function SearchSelection() {
             var x = document.getElementById("search").value;
             var xmlhttp = new XMLHttpRequest();
-            var url = location.protocol + '//' + location.host+"/Project-soften/search-link.php"
+            var url = location.protocol + '//' + location.host+"/Project-soften/search-link.php";
 
             xmlhttp.onreadystatechange=function() {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {

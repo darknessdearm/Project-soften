@@ -12,6 +12,7 @@ $result_bookmark = connect_database($sql_bookmark);
 while($rs = $result_bookmark->fetch_assoc()){
     $product[$rs["ProductID"]] = 1;
 }
+
 $outp = "[";
 while($rs = $result->fetch_assoc()) {
     if ($outp != "[") {$outp .= ",";}
@@ -29,8 +30,6 @@ while($rs = $result->fetch_assoc()) {
 }
 $outp .="]";
 
-
-$outp .="]";
 
 
 echo($outp);
