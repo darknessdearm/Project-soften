@@ -175,6 +175,7 @@
                         
                         if (totalItem != "[") {totalItem += ",";}
                         totalItem += '{"ProductID":"' + itemInCart[i].ProductID + '",'+
+                                    '"ProductName":"' + itemInCart[i].ProductName + '",'+
                                     '"img":"' + itemInCart[i].img + '",'+
                                     '"Price":"' + itemInCart[i].Price + '",';
 
@@ -192,7 +193,6 @@
             }
             
             function display(totalItem){
-                window.alert(totalItem)
                 showTotal = JSON.parse(totalItem);
                 
                 var show = "";
@@ -200,7 +200,7 @@
                     show += "<tbody>"+
                         "<tr>"+
                         "<td style='width:200px'><img src='" + showTotal[i].img + "' style='width:60%'' class='mx-auto d-block'></td>"+
-                        "<td style='margin-left:5%'>product " + showTotal[i].ProductName + "<br>price: " + showTotal[i].Price + " baht.</td>"+
+                        "<td style='margin-left:5%'>Product: " + showTotal[i].ProductName + "<br>price: " + showTotal[i].Price + " ฿</td>"+
                         "<td style='text-align:center'>Qty : " + showTotal[i].count + "</td>"+
                         "<td style='text-align:center'>Total : " + showTotal[i].count*showTotal[i].Price + " ฿</td>"+
                         "</tr>"+
