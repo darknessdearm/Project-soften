@@ -340,7 +340,6 @@
             addb[0].onclick = function() { bookMarkDeletion(b);};
             addb[0].innerHTML = "Bookmark Added"
             addb[0].name = "delb"+b;
-            alert("add");
         }
 
         function bookMarkDeletion(b) {
@@ -360,7 +359,6 @@
             addb[0].onclick = function() { bookMarkSelection(b);};
             addb[0].innerHTML = "Add Bookmark"
             addb[0].name = "addb"+b;
-            alert("del");
         }
         
        load()
