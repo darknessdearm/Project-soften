@@ -77,6 +77,31 @@
         #pd{
             color:#ed553B;
         }
+        #addCart{
+            color:white;
+            background-color:#ed553B;
+        }
+        #addCart:hover{
+            border-radius: 5px;
+            border: 1.5px solid #ed553B;
+            color:#ed553B;
+            background-color:white;
+        }
+        #addCart:active{
+            color:white;
+            background-color:#ed553B;
+        }
+        #addBookmark{
+            border-radius: 5px;
+            border: 1.5px solid #ffbf00;
+            background-color:#fcfcfc;
+        }
+        #deleteBookmark{
+            color:black;
+            border-radius: 5px;
+            border: 1.5px solid #ffbf00;
+            background-color:#ffbf00
+        }
     </style>
 </head>
 <body>
