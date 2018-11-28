@@ -157,69 +157,73 @@
         
         
       
-        <script>
-            if(sessionStorage.getItem("count")){
-                showCItem();
-            }
-            
-            function showCItem(){
-                cOut = "<span class='num'>" + sessionStorage.getItem("count") + "</span>";
-                document.getElementById("cItem").innerHTML = cOut;
-            }
+    <script>
+        if(sessionStorage.getItem("count")){
+            showCItem();
+        }
+        
+        function showCItem(){
+            cOut = "<span class='num'>" + sessionStorage.getItem("count") + "</span>";
+            document.getElementById("cItem").innerHTML = cOut;
+        }
 
-            chJSON();
-            
-            function chJSON() {
-                buff = sessionStorage.getItem("cart");
-                buff += "]";
-                itemInCart = JSON.parse(buff);
-                var totalItem = "[";
-                for( var i = 0 ; i < itemInCart.length ; i++ ) {
-                    var str = '"ProductID":"' + itemInCart[i].ProductID + '"';
-                    if(Number(totalItem.search(str)) == -1){
-                        
-                        if (totalItem != "[") {totalItem += ",";}
-                        totalItem += '{"ProductID":"' + itemInCart[i].ProductID + '",'+
-                                    '"ProductName":"' + itemInCart[i].ProductName + '",'+
-                                    '"img":"' + itemInCart[i].img + '",'+
-                                    '"Price":"' + itemInCart[i].Price + '",';
+        chJSON();
+        
+        function chJSON() {
+            buff = sessionStorage.getItem("cart");
+            buff += "]";
+            itemInCart = JSON.parse(buff);
+            var totalItem = "[";
+            for( var i = 0 ; i < itemInCart.length ; i++ ) {
+                var str = '"ProductID":"' + itemInCart[i].ProductID + '"';
+                if(Number(totalItem.search(str)) == -1){
+                    
+                    if (totalItem != "[") {totalItem += ",";}
+                    totalItem += '{"ProductID":"' + itemInCart[i].ProductID + '",'+
+                                '"ProductName":"' + itemInCart[i].ProductName + '",'+
+                                '"img":"' + itemInCart[i].img + '",'+
+                                '"Price":"' + itemInCart[i].Price + '",';
 
-                        for (var j = i+1 ; j < itemInCart.length ; j++){
-                            var str2 = '"ProductID":"' + itemInCart[j].ProductID + '"';
-                            if(Number(str.search(str2)) != -1){
-                                itemInCart[i].count = Number(itemInCart[i].count) + Number(itemInCart[j].count);
-                            }
+                    for (var j = i+1 ; j < itemInCart.length ; j++){
+                        var str2 = '"ProductID":"' + itemInCart[j].ProductID + '"';
+                        if(Number(str.search(str2)) != -1){
+                            itemInCart[i].count = Number(itemInCart[i].count) + Number(itemInCart[j].count);
                         }
-                        totalItem += '"count":"' + itemInCart[i].count + '"}';
                     }
+                    totalItem += '"count":"' + itemInCart[i].count + '"}';
                 }
-                totalItem += "]";
-                display(totalItem);
             }
-            
-            function display(totalItem){
-                showTotal = JSON.parse(totalItem);
-                var sum =0;
-                var show = "";
-                for (var i = 0; i < showTotal.length ; i++) {
-                    show += "<tbody>"+
-                        "<tr>"+
-                        "<td style='width:200px'><img src='" + showTotal[i].img + "' style='width:60%'' class='mx-auto d-block'></td>"+
-                        "<td style='margin-left:5%'>Product: " + showTotal[i].ProductName + "<br>price: " + showTotal[i].Price + " ฿</td>"+
-                        "<td style='text-align:center'>Qty : " + showTotal[i].count + "<a onclick='bin(" + showTotal[i].ProductID + ")' class='fas fa-trash' id='bin'></a></td>"+
-                        "<td style='text-align:right'> ฿" + showTotal[i].count*showTotal[i].Price + " </td>"+
-                        "</tr>";
-                    sum +=showTotal[i].count*showTotal[i].Price;
-                }
-                document.getElementById("inCart").innerHTML = show + "<tr>"+
-                        "<td ></td>"+
-                        "<td ></td>"+
-                        "<td ></td>"+
-                        "<td style='text-align:right'><h6>Total : ฿" + sum + "</h6></td>"+
-                        "</tr>"+
-                    "</tbody>";
+            totalItem += "]";
+            display(totalItem);
+        }
+        
+        function display(totalItem){
+            showTotal = JSON.parse(totalItem);
+            var sum =0;
+            var show = "";
+            for (var i = 0; i < showTotal.length ; i++) {
+                show += "<tbody>"+
+                    "<tr>"+
+                    "<td style='width:200px'><img src='" + showTotal[i].img + "' style='width:60%'' class='mx-auto d-block'></td>"+
+                    "<td style='margin-left:5%'>Product: " + showTotal[i].ProductName + "<br>price: " + showTotal[i].Price + " ฿</td>"+
+                    "<td style='text-align:center'>Qty : " + showTotal[i].count + "<a onclick='bin(" + showTotal[i].ProductID + ")' class='fas fa-trash' id='bin'></a></td>"+
+                    "<td style='text-align:right'> ฿" + showTotal[i].count*showTotal[i].Price + " </td>"+
+                    "</tr>";
+                sum +=showTotal[i].count*showTotal[i].Price;
             }
+            document.getElementById("inCart").innerHTML = show + "<tr>"+
+                    "<td ></td>"+
+                    "<td ></td>"+
+                    "<td ></td>"+
+                    "<td style='text-align:right'><h6>Total : ฿" + sum + "</h6></td>"+
+                    "</tr>"+
+                "</tbody>";
+        }
             
+        function bin(ID) {
+            
+        }
+
             
         </script>
 </body>
