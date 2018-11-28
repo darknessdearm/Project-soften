@@ -227,7 +227,7 @@
         }
         
         function addCart(ID){
-            ID--;
+            ID;
             var cproduct = "#c" + product[ID].ProductID;
             window.alert(cproduct);
             if (itemInCart != "[") {itemInCart += ",";}
@@ -266,7 +266,7 @@
             var out = "<ul class='flex-container wrap'>";
             for( var i = 0 ; i < product.length ; i++ ) {
                 out += "<li class='flex-item'>"+
-                    "<div class='card' style='width:350px' data-toggle='modal' data-target='#p" + product[i].ProductID + "'>"+
+                    "<div class='card' style='width:350px' data-toggle='modal' data-target='#p" + i + "'>"+
                         "<img class='card-img-top' src='" + product[i].img + "' alt='Card image' style='width:100%'>"+
                         "<div class='card-body'>"+
                             "<h4 class='card-title'>" + product[i].ProductName + "</h4>"+
@@ -295,11 +295,7 @@
                                         "<h5>Price: " + product[i].Price + " baht.</h5>"+
                                         "<h6>Descpirtion: </h6>"+
                                         "<p>" + product[i].Description + "</p>"+
-<<<<<<< HEAD
-                                        "<h5>Quantity : "+"<input type='number' name='quantity' min='1' max='20' id='c" + product[i].ProductID + "' value='1'>"+"</h5>"+
-=======
                                         "<h5>Quantity : "+"<input class='c' type='number' name='quantity' min='1' max='20' id='c" + product[i].ProductID + "' value='1'>"+"</h5>"+
->>>>>>> 5cb26f372bab28dab6f319b909f9d43439a62501
                                     "</div>"+
                                 "</div>"+
                             "</div>"+
