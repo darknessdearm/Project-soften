@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -155,7 +159,11 @@
             <li><a class="dropdown-item" href="#logout">Log Out</a></li>
             </ul>
         </li>
-        <li class = "nav-item my-2 my-sm-0t"><a href="#cart" id = "cart" class='fas fa-shopping-cart'></a></li>
+        <li class = "nav-item my-2 my-sm-0t">
+            <a href="view-cart.php" id = "cart" class='fas fa-shopping-cart'></a>
+            <span id="cItem"></span>
+        </li>
+
         </ul>
     </nav>
         <div class="container-fluid" style="margin-top:60px">
@@ -203,9 +211,40 @@
         
         </div>
         <script>
+        if(sessionStorage.getItem("count")){
+            showCItem();
+        }
+        
+        function showCItem(){
+            cOut = "<span class='num'>" + sessionStorage.getItem("count") + "</span>";
+            document.getElementById("cItem").innerHTML = cOut;
+        }
+
+        if(!sessionStorage.getItem("cart")){
+            var itemInCart = "[";
+        }
+        else {
+            itemInCart = sessionStorage.getItem("cart");
+        }
+        
+        function addCart(ID){
+            ID--;
+            if (itemInCart != "[") {itemInCart += ",";}
+            itemInCart += '{"ProductID":"' + product[ID].ProductID + '",'+
+                            '"ProductName":"' + product[ID].ProductName + '",'+
+                            '"Price":"' + product[ID].Price + '",'+
+                            '"img":"' + product[ID].img + '"}';
+                    
+            if (sessionStorage.count) {
+                sessionStorage.count = Number(sessionStorage.count) + 1;
+            } else {
+                sessionStorage.count = 1;
+            }
+            sessionStorage.setItem("cart", itemInCart);
+            showCItem();
+        }
 
         load();
-        
         function load(){
             var xmlhttp = new XMLHttpRequest();
             var url = location.protocol + '//' + location.host+"/Project-soften/view-product-link.php"
@@ -262,7 +301,7 @@
                                     "<button type='button' class='btn btn-outline-warning' id='addBookmark'>Add Bookmark</button>"+
                                 "</div>"+
                                 "<div class='col-sm-4'>"+
-                                    "<button type='button' class='btn btn' id='addCart'>Add to Cart</button>"+
+                                    "<button type='button' class='btn btn' id='addCart' onclick='addCart(" + product[i].ProductID + ")'>Add to Cart</button>"+
                                 "</div>"+
                                 "<div class'col-sm-2'></div>"+
                             "</div>"+
