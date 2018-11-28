@@ -96,6 +96,10 @@
             font-family:sans-serif;
             text-align:center;
         }
+        .l{
+            font-size:12px;
+            display:inline;
+        }
     </style>
 </head>
 <body>
@@ -224,45 +228,52 @@
         </div>
         <br>
         <div class="modal fade" id="myModal">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
 
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Product Name</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Product Name</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
 
-            <!-- Modal body -->
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <img src="img\product\001.png" style="width:100%">
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <img src="img\product\001.png" style="width:100%">
+                        </div>
+                        <div class="col-sm-6">
+                            <h5>
+                                Price: 31 baht. Quantity : 
+                                <span class="l">
+                                <input type="number" name="quantity" min="1" max="10"> 
+                                </span>
+                            </h5>
+                            <h6>Descpirtion</h1>
+                            <p>sfaifijddskfkdsfjowejgowgowwieiorucijefksjkfdkir3jdoiddkdkdkafja</p>
+                        </div>
                     </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <!-- <div class="col-sm-1"></div> -->
                     <div class="col-sm-5">
-                        <h5>Price: 31 baht.</h2>
-                        <h6>Descpirtion</h1>
-                        <p>sfaifijddskfkdsfjowejgowgowwieiorucijefksjkfdkir3jdoiddkdkdkafja</p>
+                        <button type="button" class="btn btn-outline-warning" id="addBookmark">Add Bookmark</button>
                     </div>
+                    <div class="col-sm-4">
+                        <button type="button" class="btn btn" id="addCart" >Add to Cart</button>
+                    </div>
+                    <div class="col-sm-1"></div>
                 </div>
-            </div>
 
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <!-- <div class="col-sm-1"></div> -->
-                <div class="col-sm-5">
-                    <button type="button" class="btn btn-outline-warning" id="addBookmark">Add Bookmark</button>
                 </div>
-                <div class="col-sm-4">
-                    <button type="button" class="btn btn" id="addCart">Add to Cart</button>
-                </div>
-                <div class="col-sm-1"></div>
-            </div>
-
             </div>
         </div>
+        
         </div>
-
+        </div>
         <script>
         filterSelection("all")
         function filterSelection(c) {

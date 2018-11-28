@@ -142,6 +142,10 @@
         background-color: #ed553B;
         color: white;
         }
+        #c{
+            text-align:center;
+            font-size:18px;
+        }
     </style>
 </head>
 <body>
@@ -289,13 +293,14 @@
                             "</div>"+
                             "<div class='modal-body'>"+
                                 "<div class='row'>"+
-                                    "<div class='col-sm-6'>"+
+                                    "<div class='col-sm-5'>"+
                                         "<img src='" + product[i].img + "' style='width:100%'>"+
                                     "</div>"+
-                                    "<div class='col-sm-5'>"+
-                                        "<h5>Price: " + product[i].Price + " baht.</h2>"+
-                                        "<h6>Descpirtion: </h1>"+
+                                    "<div class='col-sm-6'>"+
+                                        "<h5>Price: " + product[i].Price + " baht.</h5>"+
+                                        "<h6>Descpirtion: </h6>"+
                                         "<p>" + product[i].Description + "</p>"+
+                                        "<h5>Quantity : "+"<input type='number' name='quantity' min='1' max='10' id='c'>"+"</h5>"+
                                     "</div>"+
                                 "</div>"+
                             "</div>"+
