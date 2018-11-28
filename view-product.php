@@ -345,7 +345,6 @@
             addb[0].onclick = function() { bookMarkDeletion(b);};
             addb[0].innerHTML = "Bookmark Added"
             addb[0].name = "delb"+b;
-            alert("add");
         }
 
         function bookMarkDeletion(b) {
@@ -365,7 +364,6 @@
             addb[0].onclick = function() { bookMarkSelection(b);};
             addb[0].innerHTML = "Add Bookmark"
             addb[0].name = "addb"+b;
-            alert("del");
         }
         
        load()
@@ -388,7 +386,7 @@
         function SearchSelection() {
             var x = document.getElementById("search").value;
             var xmlhttp = new XMLHttpRequest();
-            var url = location.protocol + '//' + location.host+"/Project-soften/search-link.php"
+            var url = location.protocol + '//' + location.host+"/Project-soften/search-link.php";
 
             xmlhttp.onreadystatechange=function() {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
