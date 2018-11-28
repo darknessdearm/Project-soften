@@ -151,13 +151,20 @@
         <table id="inCart" class = "table table-hover">
             
         </table>
-        <button type="button" class="btn btn-danger" id="pay">Check Out</button>
+        <button type="button" class="btn btn-danger" id="pay" onclick="checkOut()">Check Out</button>
         </div>
         <div id="container" style="margin-left:8%"></div>
         
         
       
     <script>
+
+        function checkOut(){
+            sessionStorage.clear();
+            window.location.href = 'view-product.php';
+            
+        }
+
         if(sessionStorage.getItem("count")){
             showCItem();
         }
@@ -221,7 +228,7 @@
         }
             
         function bin(ID) {
-            
+
         }
 
             
