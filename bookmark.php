@@ -200,6 +200,42 @@
         
       
         <script>
+            if(sessionStorage.getItem("count")){
+            showCItem();
+        }
+        
+        function showCItem(){
+            cOut = "<span class='num'>" + sessionStorage.getItem("count") + "</span>";
+            document.getElementById("cItem").innerHTML = cOut;
+        }
+
+        if(!sessionStorage.getItem("cart")){
+            var itemInCart = "[";
+        }
+        else {
+            itemInCart = sessionStorage.getItem("cart");
+        }
+        
+        function addCart(ID){
+            ID--;
+            var cproduct = "#c" + product[ID].ProductID;
+            window.alert(cproduct);
+            if (itemInCart != "[") {itemInCart += ",";}
+            itemInCart += '{"ProductID":"' + product[ID].ProductID + '",'+
+                            '"ProductName":"' + product[ID].ProductName + '",'+
+                            '"Price":"' + product[ID].Price + '",'+
+                            '"img":"' + product[ID].img + '",'+
+                            '"count":"' + $(cproduct).val() + '"}';
+                    
+            if (sessionStorage.count) {
+                sessionStorage.count = Number(sessionStorage.count) + Number($(cproduct).val());
+            } else {
+                sessionStorage.count = $(cproduct).val();;
+            }
+            sessionStorage.setItem("cart", itemInCart);
+            showCItem();
+        }
+
             load();
             function load(){
                 var xmlhttp = new XMLHttpRequest();
