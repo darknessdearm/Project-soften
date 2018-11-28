@@ -227,9 +227,7 @@
         }
         
         function addCart(ID){
-            ID;
             var cproduct = "#c" + product[ID].ProductID;
-            window.alert(cproduct);
             if (itemInCart != "[") {itemInCart += ",";}
             itemInCart += '{"ProductID":"' + product[ID].ProductID + '",'+
                             '"ProductName":"' + product[ID].ProductName + '",'+
@@ -266,7 +264,7 @@
             var out = "<ul class='flex-container wrap'>";
             for( var i = 0 ; i < product.length ; i++ ) {
                 out += "<li class='flex-item'>"+
-                    "<div class='card' style='width:350px' data-toggle='modal' data-target='#p" + i + "'>"+
+                    "<div class='card' style='width:350px' data-toggle='modal' data-target='#p" + product[i].ProductID + "'>"+
                         "<img class='card-img-top' src='" + product[i].img + "' alt='Card image' style='width:100%'>"+
                         "<div class='card-body'>"+
                             "<h4 class='card-title'>" + product[i].ProductName + "</h4>"+
@@ -279,7 +277,7 @@
             
             var outModal = "";
             for( var i = 0 ; i < product.length ; i++ ) {
-                outModal += "<div class='modal fade' id='p" + product[i].ProductID + "'>"+
+                outModal += "<div class='modal fade' id='p" + product[i].ProductID  + "'>"+
                     "<div class='modal-dialog modal-lg'>"+
                         "<div class='modal-content'>"+
                             "<div class='modal-header'>"+
@@ -305,7 +303,7 @@
                 outModal += "<button type='button' class='btn btn-outline-warning' id='deleteBookmark' name = 'delb"+product[i].ProductID+"' onclick='bookMarkDeletion(" + product[i].ProductID + ")'>Bookmark Added</button>";
                 outModal += "</div>"+
                                 "<div class='col-sm-4'>"+
-                                    "<button type='button' class='btn btn' id='addCart' onclick='addCart(" + product[i].ProductID + ")'>Add to Cart</button>"+
+                                    "<button type='button' class='btn btn' id='addCart' onclick='addCart(" + i + ")'>Add to Cart</button>"+
                                 "</div>"+
                                 "<div class'col-sm-2'></div>"+
                             "</div>"+
