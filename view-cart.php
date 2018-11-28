@@ -146,10 +146,10 @@
         <table class = "table table-hover">
             <tbody>
                 <tr>
-                <td>img</td>
-                <td>product name<br>price/unit</td>
-                <td>count</td>
-                <td>price*count</td>
+                <td style="width:200px"><img src="img\Product\001.png" style="width:60%" class="mx-auto d-block"></td>
+                <td style="margin-left:5%">product name<br>price: 31 baht.</td>
+                <td style="text-align:center">Qty : 5</td>
+                <td style="text-align:center">Total : 151 ฿</td>
                 </tr>
             </tbody>
             <tbody>
