@@ -16,7 +16,8 @@ while($rs = $result->fetch_assoc()) {
     $outp .= '"Price":"'.$rs["Price"].'",';
     $outp .= '"Description":"'.$rs["Description"].'",';
     $outp .= '"Balance":"'.$rs["Balance"].'",';
-    $outp .= '"img":"img/Product/'.$rs["img"].'.png"}';
+    $outp .= '"img":"img/Product/'.$rs["img"].'.png",';
+    $outp .= '"Bookmark":"'.$rs["UserID"].'"}';
 }
 $outp .="]";
 
