@@ -90,6 +90,20 @@
             color:red;
             background-color:white;
         }
+        .num{
+            position:absolute;
+            top:5px;
+            right:3px;
+            width:20px;
+            height:20px;
+            border-radius:50%;
+            background:white;
+            color:red;
+            line-height:20px;
+            font-size:12px;
+            font-family:sans-serif;
+            text-align:center;
+        }
     </style>
 </head>
 <body>
@@ -110,7 +124,11 @@
             <li><a class="dropdown-item" href="#logout">Log Out</a></li>
             </ul>
         </li>
-        <li class = "nav-item my-2 my-sm-0t"><a href="#cart" id = "cart" class='fas fa-shopping-cart'></a></li>
+        <li class = "nav-item my-2 my-sm-0t">
+            <a href="#cart" id = "cart" class='fas fa-shopping-cart'></a>
+            <span id="cItem"></span>
+        </li>
+        
         </ul>
     </nav>
         <div class="container-fluid" style="margin-top:60px">
@@ -150,7 +168,16 @@
         
       
         <script>
-            display()
+            if(sessionStorage.getItem("count")){
+                showCItem();
+            }
+            
+            function showCItem(){
+                cOut = "<span class='num'>" + sessionStorage.getItem("count") + "</span>";
+                document.getElementById("cItem").innerHTML = cOut;
+            }
+
+            display();
 
             function display() {
                 buff = sessionStorage.getItem("cart");
@@ -179,6 +206,8 @@
                 totalItem += "]";
                 window.alert(totalItem);
             }
+
+            
             
         </script>
 </body>
