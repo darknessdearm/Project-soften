@@ -11,13 +11,10 @@ $sql_bookmark = "SELECT * FROM bookmark where UserID = '1'";
 $result_bookmark = connect_database($sql_bookmark);
 while($rs = $result_bookmark->fetch_assoc()){
     $product[$rs["ProductID"]] = 1;
-    //echo $rs["ProductID"]."= ".$product[$rs["ProductID"]]."<br>";
 }
 $outp = "[";
 while($rs = $result->fetch_assoc()) {
     if ($outp != "[") {$outp .= ",";}
-    
-
     $outp .= '{"ProductID":"'.$rs["ProductID"].'",';
     $outp .= '"ProductName":"'.$rs["ProductName"].'",';
     $outp .= '"Type":"'.$rs["Type"].'",';
