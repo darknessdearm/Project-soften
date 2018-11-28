@@ -298,7 +298,7 @@
                             "</div>"+
                             "<div class='modal-footer'>"+
                                 "<div class='col-sm-6'>"+
-                                    "<button type='button' class='btn btn-outline-warning' id='addBookmark'>Add Bookmark</button>"+
+                                    "<button type='button' class='btn btn-outline-warning' id='addBookmark' onclick='bookMarkSelection(" + product[i].ProductID + ")'>Add Bookmark</button>"+
                                 "</div>"+
                                 "<div class='col-sm-4'>"+
                                     "<button type='button' class='btn btn' id='addCart' onclick='addCart(" + product[i].ProductID + ")'>Add to Cart</button>"+
@@ -316,7 +316,7 @@
         function bookMarkSelection(b) {
             var xmlhttp = new XMLHttpRequest();
             var url = location.protocol + '//' + location.host+"/Project-soften/add-bookmark-link.php"
-
+            
             xmlhttp.onreadystatechange=function() {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                     displayResponse(xmlhttp.responseText);
@@ -328,6 +328,7 @@
         
         filterSelection("all")
         function filterSelection(c) {
+            document.getElementById("search").value = '';
             var xmlhttp = new XMLHttpRequest();
             var url = location.protocol + '//' + location.host+"/Project-soften/filter-link.php"
 
@@ -339,6 +340,8 @@
             xmlhttp.open("GET", url+"?filter="+c, true);
             xmlhttp.send();
         }
+
+        
 
         function SearchSelection() {
             var x = document.getElementById("search").value;
@@ -353,6 +356,10 @@
 
             xmlhttp.open("GET", url+"?search="+x, true);
             xmlhttp.send();
+            btns[0].className = "btn active";
+            for(var i =1; i < btns.length ; i++){
+                btns[i].className = "btn";
+            }
         }
 
         function w3AddClass(element, name) {
@@ -377,7 +384,7 @@
         }
 
         // Add active class to the current button (highlight it)
-        var btnContainer = document.getElementById("myBtnContainer");
+        var btnContainer = document.getElementById("myBtnContainer"); // button filter
         var btns = btnContainer.getElementsByClassName("btn");
         for (var i = 0; i < btns.length; i++) {
         btns[i].addEventListener("click", function(){
