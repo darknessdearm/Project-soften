@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -104,6 +104,11 @@
             font-family:sans-serif;
             text-align:center;
         }
+        #bin{
+            color:black; 
+            font-size:16px; 
+            text-indent: 2em;  
+        }
     </style>
 </head>
 <body>
@@ -201,7 +206,7 @@
                         "<tr>"+
                         "<td style='width:200px'><img src='" + showTotal[i].img + "' style='width:60%'' class='mx-auto d-block'></td>"+
                         "<td style='margin-left:5%'>Product: " + showTotal[i].ProductName + "<br>price: " + showTotal[i].Price + " ฿</td>"+
-                        "<td style='text-align:center'>Qty : " + showTotal[i].count + "</td>"+
+                        "<td style='text-align:center'>Qty : " + showTotal[i].count + "<a href='#bin' class='fas fa-trash' id='bin'></a></td>"+
                         "<td style='text-align:right'> ฿" + showTotal[i].count*showTotal[i].Price + " </td>"+
                         "</tr>";
                     sum +=showTotal[i].count*showTotal[i].Price;
