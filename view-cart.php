@@ -128,10 +128,10 @@
         <table class = "table table-hover">
             <tbody>
                 <tr>
-                <td>img</td>
-                <td>product name<br>price/unit</td>
-                <td>count</td>
-                <td>price*count</td>
+                <td style="width:125px"><img src="img\Product\001.png" style="width:100%"></td>
+                <td style="margin-left:5%">product name<br>price/unit</td>
+                <td style="text-align:center">count</td>
+                <td style="text-align:center">price*count</td>
                 </tr>
             </tbody>
             <tbody>
