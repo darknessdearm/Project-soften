@@ -235,9 +235,12 @@
         }
         
         function addCart(ID){
+            
             ID--;
+            window.alert(ID);
+            window.alert(product[ID].ProductID);
             var cproduct = "#c" + product[ID].ProductID;
-            window.alert(cproduct);
+            
             if (itemInCart != "[") {itemInCart += ",";}
             itemInCart += '{"ProductID":"' + product[ID].ProductID + '",'+
                             '"ProductName":"' + product[ID].ProductName + '",'+
@@ -273,6 +276,7 @@
             
             var out = "<ul class='flex-container wrap'>";
             for( var i = 0 ; i < product.length ; i++ ) {
+                
                 out += "<li class='flex-item'>"+
                     "<div class='card' style='width:350px' data-toggle='modal' data-target='#p" + product[i].ProductID + "'>"+
                         "<img class='card-img-top' src='" + product[i].img + "' alt='Card image' style='width:100%'>"+
@@ -318,7 +322,7 @@
                 }
                 outModal += "</div>"+
                                 "<div class='col-sm-4'>"+
-                                    "<button type='button' class='btn btn' id='addCart' onclick='addCart(" + product[i].ProductID + ")'>Add to Cart</button>"+
+                                    "<button type='button' class='btn btn' id='addCart' onclick='addCart(" + i + ")'>Add to Cart</button>"+
                                 "</div>"+
                                 "<div class'col-sm-2'></div>"+
                             "</div>"+
