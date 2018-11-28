@@ -206,7 +206,7 @@
                         "<tr>"+
                         "<td style='width:200px'><img src='" + showTotal[i].img + "' style='width:60%'' class='mx-auto d-block'></td>"+
                         "<td style='margin-left:5%'>Product: " + showTotal[i].ProductName + "<br>price: " + showTotal[i].Price + " ฿</td>"+
-                        "<td style='text-align:center'>Qty : " + showTotal[i].count + "<a href='#bin' class='fas fa-trash' id='bin'></a></td>"+
+                        "<td style='text-align:center'>Qty : " + showTotal[i].count + "<a onclick='bin(" + showTotal[i].ProductID + ")' class='fas fa-trash' id='bin'></a></td>"+
                         "<td style='text-align:right'> ฿" + showTotal[i].count*showTotal[i].Price + " </td>"+
                         "</tr>";
                     sum +=showTotal[i].count*showTotal[i].Price;
