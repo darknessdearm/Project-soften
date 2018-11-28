@@ -90,6 +90,20 @@
             color:red;
             background-color:white;
         }
+        .num{
+            position:absolute;
+            top:5px;
+            right:3px;
+            width:20px;
+            height:20px;
+            border-radius:50%;
+            background:white;
+            color:red;
+            line-height:20px;
+            font-size:12px;
+            font-family:sans-serif;
+            text-align:center;
+        }
     </style>
 </head>
 <body>
@@ -110,7 +124,11 @@
             <li><a class="dropdown-item" href="#logout">Log Out</a></li>
             </ul>
         </li>
-        <li class = "nav-item my-2 my-sm-0t"><a href="#cart" id = "cart" class='fas fa-shopping-cart'></a></li>
+        <li class = "nav-item my-2 my-sm-0t">
+            <a href="#cart" id = "cart" class='fas fa-shopping-cart'></a>
+            <span id="cItem"></span>
+        </li>
+        
         </ul>
     </nav>
         <div class="container-fluid" style="margin-top:60px">
@@ -125,23 +143,8 @@
         </div>
         
         <div class = "container">
-        <table class = "table table-hover">
-            <tbody>
-                <tr>
-                <td>img</td>
-                <td>product name<br>price/unit</td>
-                <td>count</td>
-                <td>price*count</td>
-                </tr>
-            </tbody>
-            <tbody>
-                <tr>
-                <td>img</td>
-                <td>product name<br>price/unit</td>
-                <td>count</td>
-                <td>price*count</td>
-                </tr>
-            </tbody>
+        <table id="inCart" class = "table table-hover">
+            
         </table>
         <button type="button" class="btn btn-danger" id="pay">Check Out</button>
         </div>
@@ -150,20 +153,62 @@
         
       
         <script>
-            display()
+            if(sessionStorage.getItem("count")){
+                showCItem();
+            }
+            
+            function showCItem(){
+                cOut = "<span class='num'>" + sessionStorage.getItem("count") + "</span>";
+                document.getElementById("cItem").innerHTML = cOut;
+            }
 
-            function display() {
+            chJSON();
+            
+            function chJSON() {
                 buff = sessionStorage.getItem("cart");
                 buff += "]";
                 itemInCart = JSON.parse(buff);
-                window.alert(buff);
                 var totalItem = "[";
                 for( var i = 0 ; i < itemInCart.length ; i++ ) {
-                   itemInCart[i].ProductID
+                    var str = '"ProductID":"' + itemInCart[i].ProductID + '"';
+                    if(Number(totalItem.search(str)) == -1){
+                        
+                        if (totalItem != "[") {totalItem += ",";}
+                        totalItem += '{"ProductID":"' + itemInCart[i].ProductID + '",'+
+                                    '"ProductName":"' + itemInCart[i].ProductName + '",'+
+                                    '"img":"' + itemInCart[i].img + '",'+
+                                    '"Price":"' + itemInCart[i].Price + '",';
+
+                        for (var j = i+1 ; j < itemInCart.length ; j++){
+                            var str2 = '"ProductID":"' + itemInCart[j].ProductID + '"';
+                            if(Number(str.search(str2)) != -1){
+                                itemInCart[i].count = Number(itemInCart[i].count) + Number(itemInCart[j].count);
+                            }
+                        }
+                        totalItem += '"count":"' + itemInCart[i].count + '"}';
+                    }
                 }
-                out += "</ul>";
-                document.getElementById("container").innerHTML = out;
+                totalItem += "]";
+                display(totalItem);
             }
+            
+            function display(totalItem){
+                showTotal = JSON.parse(totalItem);
+                
+                var show = "";
+                for (var i = 0; i < showTotal.length ; i++) {
+                    show += "<tbody>"+
+                        "<tr>"+
+                        "<td style='width:200px'><img src='" + showTotal[i].img + "' style='width:60%'' class='mx-auto d-block'></td>"+
+                        "<td style='margin-left:5%'>Product: " + showTotal[i].ProductName + "<br>price: " + showTotal[i].Price + " ฿</td>"+
+                        "<td style='text-align:center'>Qty : " + showTotal[i].count + "</td>"+
+                        "<td style='text-align:center'>Total : " + showTotal[i].count*showTotal[i].Price + " ฿</td>"+
+                        "</tr>"+
+                    "</tbody>";
+                }
+                document.getElementById("inCart").innerHTML = show;
+            }
+            
             
         </script>
 </body>

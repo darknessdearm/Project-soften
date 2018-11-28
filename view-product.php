@@ -142,6 +142,10 @@
         background-color: #ed553B;
         color: white;
         }
+        #c{
+            text-align:center;
+            font-size:18px;
+        }
     </style>
 </head>
 <body>
@@ -232,16 +236,19 @@
         
         function addCart(ID){
             ID--;
+            var cproduct = "#c" + product[ID].ProductID;
+            window.alert(cproduct);
             if (itemInCart != "[") {itemInCart += ",";}
             itemInCart += '{"ProductID":"' + product[ID].ProductID + '",'+
                             '"ProductName":"' + product[ID].ProductName + '",'+
                             '"Price":"' + product[ID].Price + '",'+
-                            '"img":"' + product[ID].img + '"}';
+                            '"img":"' + product[ID].img + '",'+
+                            '"count":"' + $(cproduct).val() + '"}';
                     
             if (sessionStorage.count) {
-                sessionStorage.count = Number(sessionStorage.count) + 1;
+                sessionStorage.count = Number(sessionStorage.count) + Number($(cproduct).val());
             } else {
-                sessionStorage.count = 1;
+                sessionStorage.count = $(cproduct).val();;
             }
             sessionStorage.setItem("cart", itemInCart);
             showCItem();
@@ -289,13 +296,14 @@
                             "</div>"+
                             "<div class='modal-body'>"+
                                 "<div class='row'>"+
-                                    "<div class='col-sm-6'>"+
+                                    "<div class='col-sm-5'>"+
                                         "<img src='" + product[i].img + "' style='width:100%'>"+
                                     "</div>"+
-                                    "<div class='col-sm-5'>"+
-                                        "<h5>Price: " + product[i].Price + " baht.</h2>"+
-                                        "<h6>Descpirtion: </h1>"+
+                                    "<div class='col-sm-6'>"+
+                                        "<h5>Price: " + product[i].Price + " baht.</h5>"+
+                                        "<h6>Descpirtion: </h6>"+
                                         "<p>" + product[i].Description + "</p>"+
+                                        "<h5>Quantity : "+"<input type='number' name='quantity' min='1' max='20' id='c" + product[i].ProductID + "' value='1'>"+"</h5>"+
                                     "</div>"+
                                 "</div>"+
                             "</div>"+
