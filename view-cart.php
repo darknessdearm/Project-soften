@@ -123,13 +123,28 @@
                 buff = sessionStorage.getItem("cart");
                 buff += "]";
                 itemInCart = JSON.parse(buff);
-                window.alert(buff);
                 var totalItem = "[";
                 for( var i = 0 ; i < itemInCart.length ; i++ ) {
-                   itemInCart[i].ProductID
+                    var str = '"ProductID":"' + itemInCart[i].ProductID + '"';
+                    if(Number(totalItem.search(str)) == -1){
+                        
+                        if (totalItem != "[") {totalItem += ",";}
+                        totalItem += '{"ProductID":"' + itemInCart[i].ProductID + '",'+
+                                    '"img":' + itemInCart[i].img + '",'+
+                                    '"Price":' + itemInCart[i].Price + '",';
+
+                        var count = 1;
+                        for (var j = i+1 ; j < itemInCart.length ; j++){
+                            var str2 = '"ProductID":"' + itemInCart[j].ProductID + '"';
+                            if(Number(str.search(str2)) != -1){
+                                count++;
+                            }
+                        }
+                        totalItem += '"count":"' + count + '"}'
+                    }
                 }
-                out += "</ul>";
-                document.getElementById("container").innerHTML = out;
+                totalItem += "]";
+                window.alert(totalItem);
             }
             
         </script>
