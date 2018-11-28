@@ -78,10 +78,13 @@
             border: 1.5px solid #ffbf00;
             background-color:#fcfcfc;
         }
-        #addBookmark:hover{
+        #deleteBookmark{
             color:black;
-            background-color:#ffbf00;
+            border-radius: 5px;
+            border: 1.5px solid #ffbf00;
+            background-color:#ffbf00
         }
+        
         p{
             font-size:14px;
             word-wrap: break-word;
@@ -138,6 +141,10 @@
         .btn.active {
         background-color: #ed553B;
         color: white;
+        }
+        #c{
+            text-align:center;
+            font-size:18px;
         }
     </style>
 </head>
@@ -257,7 +264,7 @@
             xmlhttp.open("GET", url, true);
             xmlhttp.send();
         }
-
+   
         function displayResponse(response) {
             product = JSON.parse(response);
             
@@ -286,20 +293,27 @@
                             "</div>"+
                             "<div class='modal-body'>"+
                                 "<div class='row'>"+
-                                    "<div class='col-sm-6'>"+
+                                    "<div class='col-sm-5'>"+
                                         "<img src='" + product[i].img + "' style='width:100%'>"+
                                     "</div>"+
-                                    "<div class='col-sm-5'>"+
-                                        "<h5>Price: " + product[i].Price + " baht.</h2>"+
-                                        "<h6>Descpirtion: </h1>"+
+                                    "<div class='col-sm-6'>"+
+                                        "<h5>Price: " + product[i].Price + " baht.</h5>"+
+                                        "<h6>Descpirtion: </h6>"+
                                         "<p>" + product[i].Description + "</p>"+
+                                        "<h5>Quantity : "+"<input type='number' name='quantity' min='1' max='10' id='c'>"+"</h5>"+
                                     "</div>"+
                                 "</div>"+
                             "</div>"+
                             "<div class='modal-footer'>"+
-                                "<div class='col-sm-6'>"+
-                                    "<button type='button' class='btn btn-outline-warning' id='addBookmark' onclick='bookMarkSelection(" + product[i].ProductID + ")'>Add Bookmark</button>"+
-                                "</div>"+
+                                "<div class='col-sm-6'>";
+                                
+                if(product[i].Bookmark != 1){  
+                    outModal += "<button type='button' class='btn btn-outline-warning' id='addBookmark' name = 'addb"+product[i].ProductID+"' onclick='bookMarkSelection(" + product[i].ProductID + ")'>Add Bookmark</button>";
+                }
+                else{
+                    outModal += "<button type='button' class='btn btn-outline-warning' id='deleteBookmark' name = 'delb"+product[i].ProductID+"' onclick='bookMarkDeletion(" + product[i].ProductID + ")'>Bookmark Added</button>";
+                }
+                outModal += "</div>"+
                                 "<div class='col-sm-4'>"+
                                     "<button type='button' class='btn btn' id='addCart' onclick='addCart(" + product[i].ProductID + ")'>Add to Cart</button>"+
                                 "</div>"+
@@ -319,14 +333,40 @@
             
             xmlhttp.onreadystatechange=function() {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                    displayResponse(xmlhttp.responseText);
+                    
                 }
             }
             xmlhttp.open("GET", url+"?bookmark="+b, true);
             xmlhttp.send();
+            addb =document.getElementsByName("addb"+b);
+            console.log(addb[0]);
+            console.log(addb[0].onclick);
+            addb[0].id = "deleteBookmark";
+            addb[0].onclick = function() { bookMarkDeletion(b);};
+            addb[0].innerHTML = "Bookmark Added"
+            addb[0].name = "delb"+b;
+        }
+
+        function bookMarkDeletion(b) {
+            var xmlhttp = new XMLHttpRequest();
+            var url = location.protocol + '//' + location.host+"/Project-soften/delete-bookmark-link.php"
+            
+            xmlhttp.onreadystatechange=function() {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                  
+                }
+            }
+            xmlhttp.open("GET", url+"?bookmark="+b, true);
+            xmlhttp.send();
+            addb =document.getElementsByName("delb"+b);
+            console.log(addb[0]);
+            addb[0].id = "addBookmark";
+            addb[0].onclick = function() { bookMarkSelection(b);};
+            addb[0].innerHTML = "Add Bookmark"
+            addb[0].name = "addb"+b;
         }
         
-        filterSelection("all")
+       load()
         function filterSelection(c) {
             document.getElementById("search").value = '';
             var xmlhttp = new XMLHttpRequest();
@@ -346,7 +386,7 @@
         function SearchSelection() {
             var x = document.getElementById("search").value;
             var xmlhttp = new XMLHttpRequest();
-            var url = location.protocol + '//' + location.host+"/Project-soften/search-link.php"
+            var url = location.protocol + '//' + location.host+"/Project-soften/search-link.php";
 
             xmlhttp.onreadystatechange=function() {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {

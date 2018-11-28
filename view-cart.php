@@ -77,6 +77,19 @@
         #pd{
             color:#ed553B;
         }
+        #pay{
+            float:right;
+            color:white;
+            background-color:#ed553B;
+        }
+        #pay:hover{
+            color:white;
+            background-color:tomato;
+        }
+        #pay:active{
+            color:red;
+            background-color:white;
+        }
     </style>
 </head>
 <body>
@@ -111,7 +124,27 @@
         </div>
         </div>
         
-        
+        <div class = "container">
+        <table class = "table table-hover">
+            <tbody>
+                <tr>
+                <td>img</td>
+                <td>product name<br>price/unit</td>
+                <td>count</td>
+                <td>price*count</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                <td>img</td>
+                <td>product name<br>price/unit</td>
+                <td>count</td>
+                <td>price*count</td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-danger" id="pay">Check Out</button>
+        </div>
         <div id="container" style="margin-left:8%"></div>
         
         
