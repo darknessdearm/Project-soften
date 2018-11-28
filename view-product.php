@@ -303,7 +303,7 @@
                                         "<h5>Price: " + product[i].Price + " baht.</h5>"+
                                         "<h6>Descpirtion: </h6>"+
                                         "<p>" + product[i].Description + "</p>"+
-                                        "<h5>Quantity : "+"<input type='number' name='quantity' min='1' max='20' id='c" + product[i].ProductID + "' value='1'>"+"</h5>"+
+                                        "<h5>Quantity : "+"<input type='number' name='quantity' min='1' max='20' id='c'" + product[i].ProductID + "' value='1'>"+"</h5>"+
                                     "</div>"+
                                 "</div>"+
                             "</div>"+
