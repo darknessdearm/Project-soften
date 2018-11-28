@@ -235,10 +235,6 @@
         }
         
         function addCart(ID){
-            
-            ID;
-            window.alert(ID);
-            window.alert(product[ID].ProductID);
             var cproduct = "#c" + product[ID].ProductID;
             
             if (itemInCart != "[") {itemInCart += ",";}
