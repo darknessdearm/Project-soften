@@ -143,23 +143,8 @@
         </div>
         
         <div class = "container">
-        <table class = "table table-hover">
-            <tbody>
-                <tr>
-                <td style="width:200px"><img src="img\Product\001.png" style="width:60%" class="mx-auto d-block"></td>
-                <td style="margin-left:5%">product name<br>price: 31 baht.</td>
-                <td style="text-align:center">Qty : 5</td>
-                <td style="text-align:center">Total : 151 ฿</td>
-                </tr>
-            </tbody>
-            <tbody>
-                <tr>
-                <td>img</td>
-                <td>product name<br>price/unit</td>
-                <td>count</td>
-                <td>price*count</td>
-                </tr>
-            </tbody>
+        <table id="inCart" class = "table table-hover">
+            
         </table>
         <button type="button" class="btn btn-danger" id="pay">Check Out</button>
         </div>
@@ -177,9 +162,9 @@
                 document.getElementById("cItem").innerHTML = cOut;
             }
 
-            display();
-
-            function display() {
+            chJSON();
+            
+            function chJSON() {
                 buff = sessionStorage.getItem("cart");
                 buff += "]";
                 itemInCart = JSON.parse(buff);
@@ -190,23 +175,39 @@
                         
                         if (totalItem != "[") {totalItem += ",";}
                         totalItem += '{"ProductID":"' + itemInCart[i].ProductID + '",'+
-                                    '"img":' + itemInCart[i].img + '",'+
-                                    '"Price":' + itemInCart[i].Price + '",';
+                                    '"img":"' + itemInCart[i].img + '",'+
+                                    '"Price":"' + itemInCart[i].Price + '",';
 
-                        var count = 1;
                         for (var j = i+1 ; j < itemInCart.length ; j++){
                             var str2 = '"ProductID":"' + itemInCart[j].ProductID + '"';
                             if(Number(str.search(str2)) != -1){
-                                count++;
+                                itemInCart[i].count = Number(itemInCart[i].count) + Number(itemInCart[j].count);
                             }
                         }
-                        totalItem += '"count":"' + count + '"}'
+                        totalItem += '"count":"' + itemInCart[i].count + '"}';
                     }
                 }
                 totalItem += "]";
-                window.alert(totalItem);
+                display(totalItem);
             }
-
+            
+            function display(totalItem){
+                window.alert(totalItem)
+                showTotal = JSON.parse(totalItem);
+                
+                var show = "";
+                for (var i = 0; i < showTotal.length ; i++) {
+                    show += "<tbody>"+
+                        "<tr>"+
+                        "<td style='width:200px'><img src='" + showTotal[i].img + "' style='width:60%'' class='mx-auto d-block'></td>"+
+                        "<td style='margin-left:5%'>product " + showTotal[i].ProductName + "<br>price: " + showTotal[i].Price + " baht.</td>"+
+                        "<td style='text-align:center'>Qty : " + showTotal[i].count + "</td>"+
+                        "<td style='text-align:center'>Total : " + showTotal[i].count*showTotal[i].Price + " ฿</td>"+
+                        "</tr>"+
+                    "</tbody>";
+                }
+                document.getElementById("inCart").innerHTML = show;
+            }
             
             
         </script>

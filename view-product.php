@@ -243,7 +243,7 @@
                             '"ProductName":"' + product[ID].ProductName + '",'+
                             '"Price":"' + product[ID].Price + '",'+
                             '"img":"' + product[ID].img + '",'+
-                            '"count":' + $(cproduct).val() + '"}';
+                            '"count":"' + $(cproduct).val() + '"}';
                     
             if (sessionStorage.count) {
                 sessionStorage.count = Number(sessionStorage.count) + Number($(cproduct).val());
