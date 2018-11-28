@@ -130,7 +130,10 @@
                 <tr>
                 <td style="width:200px"><img src="img\Product\001.png" style="width:60%" class="mx-auto d-block"></td>
                 <td style="margin-left:5%"><h4>product name</h4>price: 31.00 baht.</td>
-                <td style="text-align:center">Qty : 5</td>
+                <td style="text-align:center">
+                    Qty : 5
+                    <a href="#bin" id = "bin" class="glyphicon glyphicon-trash"></a>
+                </td>
                 <td style="text-align:right">฿151.00</td>
                 </tr>
             </tbody>
