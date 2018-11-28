@@ -236,7 +236,7 @@
         
         function addCart(ID){
             
-            ID--;
+            ID;
             window.alert(ID);
             window.alert(product[ID].ProductID);
             var cproduct = "#c" + product[ID].ProductID;
