@@ -129,9 +129,9 @@
             <tbody>
                 <tr>
                 <td style="width:200px"><img src="img\Product\001.png" style="width:60%" class="mx-auto d-block"></td>
-                <td style="margin-left:5%">product name<br>price: 31 baht.</td>
+                <td style="margin-left:5%"><h4>product name</h4>price: 31.00 baht.</td>
                 <td style="text-align:center">Qty : 5</td>
-                <td style="text-align:center">Total : 151 ฿</td>
+                <td style="text-align:right">฿151.00</td>
                 </tr>
             </tbody>
             <tbody>
@@ -140,6 +140,14 @@
                 <td>product name<br>price/unit</td>
                 <td>count</td>
                 <td>price*count</td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td style="text-align:right"><h6>Total : ฿151.00</h6></td>
                 </tr>
             </tbody>
         </table>
