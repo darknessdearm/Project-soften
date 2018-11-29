@@ -109,6 +109,7 @@
             color:black; 
             font-size:16px; 
             text-indent: 2em;  
+            cursor: pointer;
         }
     </style>
 </head>
