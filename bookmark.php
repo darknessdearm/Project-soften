@@ -234,7 +234,7 @@
         
         function addCart(ID){
             var cproduct = "#c" + product[ID].ProductID;
-            if(Number($(cproduct).val()) > 0){
+            if(Number($(cproduct).val()) > 0 && Number.isInteger(Number($(cproduct).val()))){
                 if (itemInCart != "[") {itemInCart += ",";}
                 itemInCart += '{"ProductID":"' + product[ID].ProductID + '",'+
                                 '"ProductName":"' + product[ID].ProductName + '",'+
@@ -251,7 +251,7 @@
                 showCItem();
                 window.alert("Product Added");
             }else{
-                window.alert("Invalid amount of product. Please enter a positive value.");
+                window.alert("Invalid amount of product. Please enter a positive integer value.");
             }
         }
 

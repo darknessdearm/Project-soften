@@ -225,11 +225,11 @@
         }
 
         function deleteItem(ID){
-            sessionStorage.count = Number(sessionStorage.getItem("count")) - Number(itemInCart[ID].count);
-            itemInCart.splice(ID,1);
-            temp = JSON.stringify(itemInCart);
+            sessionStorage.count = Number(sessionStorage.getItem("count")) - Number(showTotal[ID].count);
+            showTotal.splice(ID,1);
+            temp = JSON.stringify(showTotal);
             index = temp.length;
-            sessionStorage.cart = JSON.stringify(itemInCart).substring(0,index-1);
+            sessionStorage.cart = JSON.stringify(showTotal).substring(0,index-1);
             showCItem();
             chJSON();
             showButtonCheckOut();
