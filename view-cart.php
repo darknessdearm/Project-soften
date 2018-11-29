@@ -82,6 +82,7 @@
             color:white;
             background-color:#ed553B;
         }
+        
         #pay:hover{
             color:white;
             background-color:tomato;
@@ -151,30 +152,48 @@
         <table id="inCart" class = "table table-hover">
             
         </table>
-        <button type="button" class="btn btn-danger" id="pay" onclick="checkOut()">Check Out</button>
+        <div id="bCheckout"> </div>
+        
         </div>
         <div id="container" style="margin-left:8%"></div>
         
         
       
     <script>
+        
 
         function checkOut(){
             sessionStorage.clear();
+            window.alert("Check out complete");
             window.location.href = 'view-product.php';
             
         }
-
         if(sessionStorage.getItem("count")){
             showCItem();
+            chJSON();
+            showButtonCheckOut();
         }
         
+        function showButtonCheckOut(){
+            if(showTotal.length > 0){
+                var oButton = "<button type='button' class='btn btn-danger' id='pay' onclick='checkOut()'>Check Out</button>";
+                document.getElementById("bCheckout").innerHTML = oButton;
+            }else {
+                document.getElementById("bCheckout").innerHTML = "";
+            }
+            
+        }
         function showCItem(){
-            cOut = "<span class='num'>" + sessionStorage.getItem("count") + "</span>";
-            document.getElementById("cItem").innerHTML = cOut;
+            if(sessionStorage.getItem("count") > 0){
+                cOut = "<span class='num'>" + sessionStorage.getItem("count") + "</span>";
+                document.getElementById("cItem").innerHTML = cOut;
+            }else{
+                document.getElementById("cItem").innerHTML = "";
+            }
+            
         }
 
-        chJSON();
+        
         
         function chJSON() {
             buff = sessionStorage.getItem("cart");
@@ -203,33 +222,45 @@
             totalItem += "]";
             display(totalItem);
         }
+
+        function deleteItem(ID){
+            sessionStorage.count = Number(sessionStorage.getItem("count")) - Number(itemInCart[ID].count);
+            itemInCart.splice(ID,1);
+            temp = JSON.stringify(itemInCart);
+            index = temp.length;
+            sessionStorage.cart = JSON.stringify(itemInCart).substring(0,index-1);
+            showCItem();
+            chJSON();
+            showButtonCheckOut();
+        }
         
         function display(totalItem){
             showTotal = JSON.parse(totalItem);
-            var sum =0;
-            var show = "";
-            for (var i = 0; i < showTotal.length ; i++) {
-                show += "<tbody>"+
-                    "<tr>"+
-                    "<td style='width:200px'><img src='" + showTotal[i].img + "' style='width:60%'' class='mx-auto d-block'></td>"+
-                    "<td style='margin-left:5%'>Product: " + showTotal[i].ProductName + "<br>price: " + showTotal[i].Price + " ฿</td>"+
-                    "<td style='text-align:center'>Qty : " + showTotal[i].count + "<a onclick='bin(" + showTotal[i].ProductID + ")' class='fas fa-trash' id='bin'></a></td>"+
-                    "<td style='text-align:right'> ฿" + showTotal[i].count*showTotal[i].Price + " </td>"+
-                    "</tr>";
-                sum +=showTotal[i].count*showTotal[i].Price;
+            if(showTotal.length > 0){
+                var sum =0;
+                var show = "";
+                for (var i = 0; i < showTotal.length ; i++) {
+                    show += "<tbody>"+
+                        "<tr>"+
+                        "<td style='width:200px'><img src='" + showTotal[i].img + "' style='width:60%'' class='mx-auto d-block'></td>"+
+                        "<td style='margin-left:5%'>Product: " + showTotal[i].ProductName + "<br>price: " + showTotal[i].Price + " ฿</td>"+
+                        "<td style='text-align:center'>Qty : " + showTotal[i].count + "<a onclick='deleteItem(" + i + ")' class='fas fa-trash' id='bin'></a></td>"+
+                        "<td style='text-align:right'> ฿" + showTotal[i].count*showTotal[i].Price + " </td>"+
+                        "</tr>";
+                    sum +=showTotal[i].count*showTotal[i].Price;
+                }
+                document.getElementById("inCart").innerHTML = show + "<tr>"+
+                        "<td ></td>"+
+                        "<td ></td>"+
+                        "<td ></td>"+
+                        "<td style='text-align:right'><h6>Total : ฿" + sum + "</h6></td>"+
+                        "</tr>"+
+                    "</tbody>";
+            }else {
+                document.getElementById("inCart").innerHTML = "";
             }
-            document.getElementById("inCart").innerHTML = show + "<tr>"+
-                    "<td ></td>"+
-                    "<td ></td>"+
-                    "<td ></td>"+
-                    "<td style='text-align:right'><h6>Total : ฿" + sum + "</h6></td>"+
-                    "</tr>"+
-                "</tbody>";
         }
-            
-        function bin(ID) {
 
-        }
 
             
         </script>

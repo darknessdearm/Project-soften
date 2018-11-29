@@ -215,8 +215,13 @@
         }
         
         function showCItem(){
-            cOut = "<span class='num'>" + sessionStorage.getItem("count") + "</span>";
-            document.getElementById("cItem").innerHTML = cOut;
+            if(sessionStorage.getItem("count") > 0){
+                cOut = "<span class='num'>" + sessionStorage.getItem("count") + "</span>";
+                document.getElementById("cItem").innerHTML = cOut;
+            }else{
+                document.getElementById("cItem").innerHTML = "";
+            }
+            
         }
 
         if(!sessionStorage.getItem("cart")){
@@ -228,20 +233,25 @@
         
         function addCart(ID){
             var cproduct = "#c" + product[ID].ProductID;
-            if (itemInCart != "[") {itemInCart += ",";}
-            itemInCart += '{"ProductID":"' + product[ID].ProductID + '",'+
-                            '"ProductName":"' + product[ID].ProductName + '",'+
-                            '"Price":"' + product[ID].Price + '",'+
-                            '"img":"' + product[ID].img + '",'+
-                            '"count":"' + $(cproduct).val() + '"}';
-                    
-            if (sessionStorage.count) {
-                sessionStorage.count = Number(sessionStorage.count) + Number($(cproduct).val());
-            } else {
-                sessionStorage.count = $(cproduct).val();;
+            if(Number($(cproduct).val()) > 0){
+                if (itemInCart != "[") {itemInCart += ",";}
+                itemInCart += '{"ProductID":"' + product[ID].ProductID + '",'+
+                                '"ProductName":"' + product[ID].ProductName + '",'+
+                                '"Price":"' + product[ID].Price + '",'+
+                                '"img":"' + product[ID].img + '",'+
+                                '"count":"' + $(cproduct).val() + '"}';
+                        
+                if (sessionStorage.count) {
+                    sessionStorage.count = Number(sessionStorage.count) + Number($(cproduct).val());
+                } else {
+                    sessionStorage.count = $(cproduct).val();;
+                }
+                sessionStorage.setItem("cart", itemInCart);
+                showCItem();
+                window.alert("Product Added");
+            }else{
+                window.alert("Invalid amount of product. Please enter a positive value.");
             }
-            sessionStorage.setItem("cart", itemInCart);
-            showCItem();
         }
 
             load();
